@@ -14,7 +14,7 @@ class PunaController extends Controller
      */
     public function index()
     {
-        //
+        return view('punet');
     }
 
     /**

@@ -12,21 +12,34 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','SessionsController@create');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/login','AuthController@authenticate');
+
+Route::get('/logout','SessionsController@destory');
 
 Route::get('/index', function () {
-    return view('asd.index');
+    return view('index');
 });
-
-
 
 Route::get('/tables', function () {
     return view('asd.tables');
 });
 
-Route::get('/automjetet', function () {
-    return view('automjetet');
-});
+
+Route::get('/punet','PunaController@index');
+
+
+
+Route::get('/njoftime','NjoftimeController@index');
+
+
+
+
+
+Route::get('/automjetet', 'AutomjetiController@index');
+
+
+
+
+Route::get('/karburanti', 'KarburantiController@index');

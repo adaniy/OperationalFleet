@@ -46,19 +46,19 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Automjetet</h1>
-          <p class="mb-4">Manipulimi me te gjitha Automjetet</p>
+          <h1 class="h3 mb-2 text-gray-800">Karburanti</h1>
+          <p class="mb-4">Manipulimi me te Karburant</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabela e Automjeteve<input style="float:right;" type="button" value="Shto" class="btn btn-primary" data-toggle="modal" data-target="#modal1"></h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabela e Karburantit<input style="float:right;" type="button" value="Shto" class="btn btn-primary" data-toggle="modal" data-target="#modal1"></h6>
               
               <div class="modal fade pg-show-modal" id="modal1" tabindex="-1" role="dialog" aria-hidden="true"> 
                 <div class="modal-dialog"> 
                     <div class="modal-content"> 
                         <div class="modal-header"> 
-                            <h4 class="modal-title">Shto Automjet</h4> 
+                            <h4 class="modal-title">Shto njesi Karburanti</h4> 
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                                     
                         </div>                                 
                         <div class="modal-body">
@@ -84,49 +84,45 @@
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Nr i shasise</th>
-                      <th>Lloji</th>
-                      <th>Brendi</th>
-                      <th>Viti</th>
+                      <th>Automjeti</th>
+                      <th>Litra</th >
+                      <th>Personeli</th>
                       <th>Kilometrat</th>
-                      <th>Aktiv</th>
+                      <th>Data</th>
                       <th>Veprime</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>#</th>
-                      <th>Nr i shasise</th>
-                      <th>Lloji</th>
-                      <th>Brendi</th>
-                      <th>Viti</th>
+                      <th>Automjeti</th>
+                      <th>Litra</th >
+                      <th>Personeli</th>
                       <th>Kilometrat</th>
-                      <th>Aktiv</th>
+                      <th>Data</th>
                       <th>Veprime</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>12AB23KLM</td>
-                      <td>Veture</td>
-                      <td>Audi</td>
-                      <td>2018</td>
-                      <td>128.203</td>
-                      <td>Po</td>
+                      <td>Veture, Audi, 02-202-fb</td>
+                      <td>50</td>
+                      <td>Filan Fisteku</td>
+                      <td>122.203</td>
+                      <td>02.07.2020</td>
                       <td>
                         <button  class="btn btn-primary" >Edito</button>                                     
                         <button  class="btn btn-primary">Fshij</button>   
                       </td>
                     </tr>
                     <tr>
-                      <td>2</td>
-                      <td>12AB23KLM</td>
-                      <td>Kamion</td>
-                      <td>Mercedes</td>
-                      <td>2012</td>
-                      <td>122.203</td>
-                      <td>Po</td>
+                        <td>2</td>
+                        <td>Veture, Mercedes, 03-202-fb</td>
+                        <td>50</td>
+                        <td>Asdren Xhafa</td>
+                        <td>122.203</td>
+                        <td>02.07.2020</td>
                       <td>
                         <button  class="btn btn-primary" >Edito</button>                                     
                         <button  class="btn btn-primary" >Fshij</button>   

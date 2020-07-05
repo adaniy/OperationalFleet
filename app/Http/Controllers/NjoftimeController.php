@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\karburanti;
+use App\njoftime;
 use Illuminate\Http\Request;
 
-class KarburantiController extends Controller
+class NjoftimeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class KarburantiController extends Controller
      */
     public function index()
     {
-        return view('karburanti');
+        return view('njoftime');
     }
 
     /**
@@ -41,10 +41,10 @@ class KarburantiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\karburanti  $karburanti
+     * @param  \App\njoftime  $njoftime
      * @return \Illuminate\Http\Response
      */
-    public function show(karburanti $karburanti)
+    public function show(njoftime $njoftime)
     {
         //
     }
@@ -52,10 +52,10 @@ class KarburantiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\karburanti  $karburanti
+     * @param  \App\njoftime  $njoftime
      * @return \Illuminate\Http\Response
      */
-    public function edit(karburanti $karburanti)
+    public function edit(njoftime $njoftime)
     {
         //
     }
@@ -64,10 +64,10 @@ class KarburantiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\karburanti  $karburanti
+     * @param  \App\njoftime  $njoftime
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, karburanti $karburanti)
+    public function update(Request $request, njoftime $njoftime)
     {
         //
     }
@@ -75,10 +75,10 @@ class KarburantiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\karburanti  $karburanti
+     * @param  \App\njoftime  $njoftime
      * @return \Illuminate\Http\Response
      */
-    public function destroy(karburanti $karburanti)
+    public function destroy(njoftime $njoftime)
     {
         //
     }
