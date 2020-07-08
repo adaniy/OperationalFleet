@@ -8,6 +8,8 @@ class automjeti extends Model
 {
     public $table = "automjeti";
 
+    protected $primaryKey = 'automjeti_id';
+
     protected $fillable = [
         'nr_shasise',
         'lloji',

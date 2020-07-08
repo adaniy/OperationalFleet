@@ -70,8 +70,10 @@
                         <form style="display: inline" action="{{ route('automjetet.edit', $aut->automjeti_id) }}">
                         <input class="btn btn-primary" type="submit" value="Edito">
                         </form>                                    
-                        <form style="display: inline" >
-                          <input class="btn btn-primary" type="submit" value="Fshij" data-toggle="modal" data-target="#modal3">
+                        <form style="display: inline"  action="{{ route('automjetet.destroy' , $aut->automjeti_id) }}" method="post">
+                          @csrf
+                          @method('delete')
+                          <input class="btn btn-primary" type="submit" value="Fshij" >
                         </form>    
                       </td>
                     </tr>

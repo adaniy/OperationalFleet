@@ -22,9 +22,9 @@
 
   <div class="modal-dialog"> 
     <div class="modal-content">
-<form method="POST" action="/automjetet" id="editForm">
-        @csrf
-        {{ method_field('POST') }}
+<form method="POST" action="{{ route('automjetet.update',$contact->automjeti_id) }}">
+      @method('PATCH') 
+      @csrf
        <div class="modal-header">      
         <h4 class="modal-title">Edito Automjetin</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/automjetet';">&times;</button>
@@ -32,23 +32,23 @@
        <div class="modal-body">     
         <div class="form-group">
          <label>Nr i Shasise</label>
-         <input name="nr_shasise" id="nr_shasise" type="text" class="form-control" required>
+         <input name="nr_shasise" id="nr_shasise" type="text" class="form-control" value="{{ $contact->nr_shasise }}" required>
         </div>
         <div class="form-group">
           <label>Lloji</label>
-          <input name="lloji" id="lloji" type="text" class="form-control" required>
+          <input name="lloji" id="lloji" type="text" class="form-control" value="{{ $contact->lloji }}" required>
          </div>
          <div class="form-group">
           <label>Brendi</label>
-          <input name="brendi" id="brendi" type="text" class="form-control" required>
+          <input name="brendi" id="brendi" type="text" class="form-control" value="{{ $contact->brendi }}" required>
          </div>
         <div class="form-group">
          <label>Viti</label>
-         <input name="viti" id="viti" type="text" class="form-control" required>
+         <input name="viti" id="viti" type="text" class="form-control" value="{{ $contact->viti }}" required>
         </div>
         <div class="form-group">
          <label>Kilometrat</label>
-         <input name="kilometrat" id="kilometrat" type="text" class="form-control" required>
+         <input name="kilometrat" id="kilometrat" type="text" class="form-control" value="{{ $contact->kilometrat }}" required>
         </div>   
        </div>
        <div class="modal-footer">

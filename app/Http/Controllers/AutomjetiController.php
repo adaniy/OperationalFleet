@@ -81,7 +81,7 @@ class AutomjetiController extends Controller
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function edit(automjeti $automjeti)
+    public function edit($automjeti)
     {
         $contact = automjeti::find($automjeti);
         return view('automjetet.edit', compact('contact'));  
@@ -94,7 +94,7 @@ class AutomjetiController extends Controller
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, automjeti $automjeti)
+    public function update(Request $request,$automjeti)
     {
         $request->validate([
             'nr_shasise'=>'required',
@@ -104,7 +104,7 @@ class AutomjetiController extends Controller
             'kilometrat'=>'required'
         ]);
 
-        $contact = automjeti::find($automjeti->automjeti_id);
+        $contact = automjeti::find($automjeti);
         $contact->nr_shasise =  $request->get('nr_shasise');
         $contact->lloji = $request->get('lloji');
         $contact->brendi = $request->get('brendi');
@@ -120,11 +120,11 @@ class AutomjetiController extends Controller
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function destroy(automjeti $automjeti)
+    public function destroy($automjeti)
     {
-        $contact = Contact::find($automjeti);
+        $contact = automjeti::find($automjeti);
         $contact->delete();
 
-        return redirect('/automjeti')->with('success', 'Contact deleted!');
+        return redirect('/automjetet')->with('success', 'Contact deleted!');
     }
 }
