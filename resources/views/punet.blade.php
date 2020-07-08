@@ -48,30 +48,6 @@
               <span>Punet</span>
               <input style="float: right" type="button" value="Shto" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
               </div>
-            
-            <div class="modal fade pg-show-modal" id="modal1" tabindex="-1" role="dialog" aria-hidden="true"> 
-                <div class="modal-dialog"> 
-                    <div class="modal-content"> 
-                        <div class="modal-header"> 
-                            <h4 class="modal-title">Shto Automjet</h4> 
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                                     
-                        </div>                                 
-                        <div class="modal-body">
-                            <input placeholder="Emri">
-                            <p><br><input placeholder="Mbiemri"></p>
-                            <p><input placeholder="Gjalle"><br></p>
-                        </div>
-                        <div class="input-group"> 
-                            <div class="input-group-prepend"> 
-                    </div>                                     
-                        </div>                                 
-                        <div class="modal-footer"> 
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Anulo</button>                                     
-                            <button type="button" class="btn btn-primary">Shto</button>                                     
-                        </div>                                 
-                    </div>                             
-                </div>                         
-              </div>
 
           </div>
 
@@ -249,6 +225,111 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+
+
+
+{{-- Shto Modal --}}
+
+<div class="modal fade pg-show-modal" id="modal1" tabindex="-1" role="dialog" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content">
+      <form>
+       <div class="modal-header">      
+        <h4 class="modal-title">Add Employee</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       </div>
+       <div class="modal-body">     
+        <div class="form-group">
+         <label>Name</label>
+         <input type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+         <label>Email</label>
+         <input type="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+         <label>Address</label>
+         <textarea class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+         <label>Phone</label>
+         <input type="text" class="form-control" required>
+        </div>     
+       </div>
+       <div class="modal-footer">
+        <input type="button" class="btn btn-default" data-dismiss="modal" value="Anulo">
+        <input type="submit" class="btn btn-primary" value="Shto">
+       </div>
+      </form>
+     </div>                
+  </div>                         
+</div>
+
+
+{{-- Edito Modal --}}
+
+<div class="modal fade pg-show-modal" id="modal2" tabindex="-1" role="dialog" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content">
+      <form>
+       <div class="modal-header">      
+        <h4 class="modal-title">Add Employee</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       </div>
+       <div class="modal-body">     
+        <div class="form-group">
+         <label>Name</label>
+         <input type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+         <label>Email</label>
+         <input type="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+         <label>Address</label>
+         <textarea class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+         <label>Phone</label>
+         <input type="text" class="form-control" required>
+        </div>     
+       </div>
+       <div class="modal-footer">
+        <input type="button" class="btn btn-default" data-dismiss="modal" value="Anulo">
+        <input type="submit" class="btn btn-primary" value="Shto">
+       </div>
+      </form>
+     </div>                
+  </div>                         
+</div>
+
+{{-- Delete Modal --}}
+<div class="modal fade pg-show-modal" id="modal3" tabindex="-1" role="dialog" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content">
+      <form>
+       <div class="modal-header">      
+        <h4 class="modal-title">Fshij Automjetin</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       </div>
+       <div class="modal-body">     
+        <p>A jeni te sigurt se doni te fshini kete Automjet?</p>
+        <p class="text-warning"><small>Ky veprim nuk mund te kthehet me.</small></p>
+       </div>
+       <div class="modal-footer">
+        <input type="button" class="btn btn-default" data-dismiss="modal" value="Anulo">
+        <input type="submit" class="btn btn-danger" value="Fshij">
+       </div>
+      </form>
+     </div>             
+  </div>                         
+</div>
+
+
+
+
+
 
 </body>
 

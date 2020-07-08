@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\automjeti;
 use Illuminate\Http\Request;
+use DB;
 
 class AutomjetiController extends Controller
 {
@@ -20,7 +21,8 @@ class AutomjetiController extends Controller
 
     public function index()
     {
-        return view('automjetet');
+        $automjetets = DB::table('automjeti')->get();
+        return view('automjetet.index',compact('automjetets'));
     }
 
     /**
@@ -30,7 +32,7 @@ class AutomjetiController extends Controller
      */
     public function create()
     {
-        //
+        return view('automjetet.create');
     }
 
     /**
@@ -41,7 +43,25 @@ class AutomjetiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nr_shasise'=>'required',
+            'lloji'=>'required',
+            'brendi'=>'required',
+            'viti'=>'required',
+            'kilometrat'=>'required'
+        ]);
+
+        $contact = new automjeti([
+            'nr_shasise' => $request->get('nr_shasise'),
+            'lloji' => $request->get('lloji'),
+            'brendi' => $request->get('brendi'),
+            'viti' => $request->get('viti'),
+            'aktiv'=> true,
+            'kilometrat' => $request->get('kilometrat')
+        ]);
+
+        $contact->save();
+        return redirect('/automjetet')->with('success', 'Automjeti u ruajt');
     }
 
     /**
@@ -63,7 +83,8 @@ class AutomjetiController extends Controller
      */
     public function edit(automjeti $automjeti)
     {
-        //
+        $contact = automjeti::find($automjeti);
+        return view('automjetet.edit', compact('contact'));  
     }
 
     /**
@@ -75,8 +96,23 @@ class AutomjetiController extends Controller
      */
     public function update(Request $request, automjeti $automjeti)
     {
-        //
-    }
+        $request->validate([
+            'nr_shasise'=>'required',
+            'lloji'=>'required',
+            'brendi'=>'required',
+            'viti'=>'required',
+            'kilometrat'=>'required'
+        ]);
+
+        $contact = automjeti::find($automjeti->automjeti_id);
+        $contact->nr_shasise =  $request->get('nr_shasise');
+        $contact->lloji = $request->get('lloji');
+        $contact->brendi = $request->get('brendi');
+        $contact->viti = $request->get('viti');
+        $contact->kilometrat = $request->get('kilometrat');
+        $contact->save();
+
+        return redirect('/automjetet')->with('success', 'Contact updated!');    }
 
     /**
      * Remove the specified resource from storage.
@@ -86,6 +122,9 @@ class AutomjetiController extends Controller
      */
     public function destroy(automjeti $automjeti)
     {
-        //
+        $contact = Contact::find($automjeti);
+        $contact->delete();
+
+        return redirect('/automjeti')->with('success', 'Contact deleted!');
     }
 }

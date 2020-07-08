@@ -37,7 +37,7 @@ Route::get('/njoftime','NjoftimeController@index');
 
 
 
-Route::get('/automjetet', 'AutomjetiController@index');
+Route::resource('automjetet', 'AutomjetiController');
 
 
 
