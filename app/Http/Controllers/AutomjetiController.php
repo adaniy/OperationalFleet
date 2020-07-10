@@ -61,8 +61,11 @@ class AutomjetiController extends Controller
             'aktiv'=> true,
             'kilometrat' => $request->get('kilometrat')
         ]);
-
-        $contact->save();
+        if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists()){
+            return redirect('/automjetet')->with('failure', 'Automjeti ekziston');
+        }else{
+            $contact->save();
+        }
         return redirect('/automjetet')->with('success', 'Automjeti u ruajt');
     }
 
@@ -116,7 +119,8 @@ class AutomjetiController extends Controller
         $contact->kilometrat = $request->get('kilometrat');
         $contact->save();
 
-        return redirect('/automjetet')->with('success', 'Contact updated!');    }
+        return redirect('/automjetet')->with('success', 'Automjeti u editua');  
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -129,6 +133,6 @@ class AutomjetiController extends Controller
         $contact = automjeti::find($automjeti);
         $contact->delete();
 
-        return redirect('/automjetet')->with('success', 'Contact deleted!');
+        return redirect('/automjetet')->with('success', 'Automjeti u fshi');
     }
 }

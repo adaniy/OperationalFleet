@@ -19,6 +19,24 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+          {{-- Alerts if Action was succesful or failed --}}
+          <div class="col-sm-12">
+
+            @if(session()->get('success'))
+            <div class="alert alert-success alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ session()->get('success') }}  
+              </div>
+            @endif
+            @if(session()->get('failure'))
+            <div class="alert alert-danger alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ session()->get('failure') }}  
+              </div>
+            @endif
+
+          </div>
+
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Automjetet</h1>
           <p class="mb-4">Manipulimi me te gjitha Automjetet</p>
@@ -69,12 +87,7 @@
                       <td>
                         <form style="display: inline" action="{{ route('automjetet.edit', $aut->id) }}">
                         <input class="btn btn-primary" type="submit" value="Edito">
-                        </form>                                    
-                        <form style="display: inline"  action="{{ route('automjetet.destroy' , $aut->id) }}" method="post">
-                          @csrf
-                          @method('delete')
-                          <input class="btn btn-primary" type="submit" value="Fshij" >
-                        </form>    
+                        </form>                                        
                       </td>
                     </tr>
                     @endforeach
