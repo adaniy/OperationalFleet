@@ -35,6 +35,10 @@
          <input name="nr_shasise" id="nr_shasise" type="text" class="form-control" value="{{ $contact->nr_shasise }}" required>
         </div>
         <div class="form-group">
+          <label>Regjistrimi</label>
+          <input name="regjistrimi" id="regjistrimi" type="text" class="form-control" value="{{ $contact->regjistrimi }}" required>
+         </div>
+        <div class="form-group">
           <label>Lloji</label>
           <input name="lloji" id="lloji" type="text" class="form-control" value="{{ $contact->lloji }}" required>
          </div>

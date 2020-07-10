@@ -36,11 +36,11 @@
                     <tr>
                       <th>#</th>
                       <th>Nr i shasise</th>
+                      <th>Regjistrimi</th>
                       <th>Lloji</th>
                       <th>Brendi</th>
                       <th>Viti</th>
                       <th>Kilometrat</th>
-                      <th>Aktiv</th>
                       <th>Veprime</th>
                     </tr>
                   </thead>
@@ -48,29 +48,29 @@
                     <tr>
                       <th>#</th>
                       <th>Nr i shasise</th>
+                      <th>Regjistrimi</th>
                       <th>Lloji</th>
                       <th>Brendi</th>
                       <th>Viti</th>
                       <th>Kilometrat</th>
-                      <th>Aktiv</th>
                       <th>Veprime</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     @foreach ($automjetets as $aut)
                     <tr>
-                      <td>{{ $aut->automjeti_id }}</td>
+                      <td>{{ $aut->id }}</td>
                       <td>{{ $aut->nr_shasise }}</td>
+                      <td>{{ $aut->regjistrimi }}</td>
                       <td>{{ $aut->lloji }}</td>
                       <td>{{ $aut->brendi }}</td>
                       <td>{{ $aut->viti }}</td>
                       <td>{{ $aut->kilometrat }}</td>
-                      <td>{{ $aut->aktiv }}</td>
                       <td>
-                        <form style="display: inline" action="{{ route('automjetet.edit', $aut->automjeti_id) }}">
+                        <form style="display: inline" action="{{ route('automjetet.edit', $aut->id) }}">
                         <input class="btn btn-primary" type="submit" value="Edito">
                         </form>                                    
-                        <form style="display: inline"  action="{{ route('automjetet.destroy' , $aut->automjeti_id) }}" method="post">
+                        <form style="display: inline"  action="{{ route('automjetet.destroy' , $aut->id) }}" method="post">
                           @csrf
                           @method('delete')
                           <input class="btn btn-primary" type="submit" value="Fshij" >
@@ -119,6 +119,10 @@
            <label>Nr i Shasise</label>
            <input name="nr_shasise" type="text" class="form-control" required>
           </div>
+          <div class="form-group">
+            <label>Regjistrimi</label>
+            <input name="regjistrimi" type="text" class="form-control" required>
+           </div>
           <div class="form-group">
             <label>Lloji</label>
             <input name="lloji" type="text" class="form-control" required>

@@ -45,6 +45,7 @@ class AutomjetiController extends Controller
     {
         $request->validate([
             'nr_shasise'=>'required',
+            'regjistrimi'=>'required',
             'lloji'=>'required',
             'brendi'=>'required',
             'viti'=>'required',
@@ -53,6 +54,7 @@ class AutomjetiController extends Controller
 
         $contact = new automjeti([
             'nr_shasise' => $request->get('nr_shasise'),
+            'regjistrimi' => $request->get('regjistrimi'),
             'lloji' => $request->get('lloji'),
             'brendi' => $request->get('brendi'),
             'viti' => $request->get('viti'),
@@ -98,6 +100,7 @@ class AutomjetiController extends Controller
     {
         $request->validate([
             'nr_shasise'=>'required',
+            'regjistrimi'=>'required',
             'lloji'=>'required',
             'brendi'=>'required',
             'viti'=>'required',
@@ -106,6 +109,7 @@ class AutomjetiController extends Controller
 
         $contact = automjeti::find($automjeti);
         $contact->nr_shasise =  $request->get('nr_shasise');
+        $contact->regjistrimi =  $request->get('regjistrimi');
         $contact->lloji = $request->get('lloji');
         $contact->brendi = $request->get('brendi');
         $contact->viti = $request->get('viti');
