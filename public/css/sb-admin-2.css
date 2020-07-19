@@ -47,7 +47,10 @@
   box-sizing: border-box;
 }
 
-
+#dataTable_wrapper .row :first-child{
+  /* background-color: red; */
+  
+}
 
 
 

@@ -21,9 +21,12 @@ class AutomjetiController extends Controller
 
     public function index()
     {
-        $automjetets = DB::table('automjeti')->get();
+        $automjetets = DB::table('automjeti')->where('deleted_at', null)->get();
+        
         return view('automjetet.index',compact('automjetets'));
+        
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,9 +62,10 @@ class AutomjetiController extends Controller
             'brendi' => $request->get('brendi'),
             'viti' => $request->get('viti'),
             'aktiv'=> true,
-            'kilometrat' => $request->get('kilometrat')
+            'deleted_at'=> null,
+            'kilometrat' => $request->get('kilometrat'),
         ]);
-        if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists()){
+        if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
             return redirect('/automjetet')->with('failure', 'Automjeti ekziston');
         }else{
             $contact->save();
@@ -135,4 +139,14 @@ class AutomjetiController extends Controller
 
         return redirect('/automjetet')->with('success', 'Automjeti u fshi');
     }
+
+    public function trash($automjeti)
+    {
+        $contact = automjeti::find($automjeti);
+        $contact->deleted_at=now();
+        $contact->save();
+
+        return redirect('/automjetet')->with('success', 'Automjeti u fshi');
+    }
+
 }

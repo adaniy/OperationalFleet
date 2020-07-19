@@ -21,6 +21,7 @@ class CreateServisiTable extends Migration
             $table->string('shuma');
             $table->string('kilometrat');
             $table->date('servisi_ardhshem');
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
 
             $table->foreign('automjeti_id')->references('id')->on('automjeti');

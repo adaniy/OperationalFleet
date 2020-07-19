@@ -21,6 +21,7 @@ class CreatePjeseTable extends Migration
             $table->string('pershkrimi');
             $table->string('shuma');
             $table->string('kilometrat');
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
 
             $table->foreign('automjeti_id')->references('id')->on('automjeti');

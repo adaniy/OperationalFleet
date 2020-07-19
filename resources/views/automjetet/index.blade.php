@@ -2,22 +2,9 @@
     
 
 @section('content')
-    <!-- Sidebar -->
-    @include('layouts.sidebar')
-    <!-- End of Sidebar -->
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar -->
-        @include('layouts.topbar')
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
 
           {{-- Alerts if Action was succesful or failed --}}
           <div class="col-sm-12">
@@ -114,7 +101,7 @@
       <!-- End of Footer -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Main Content -->
 
 
     {{-- Shto Modal --}}

@@ -14,7 +14,7 @@ class NjoftimeController extends Controller
      */
     public function index()
     {
-        return view('njoftime');
+        return view('njoftime.njoftime');
     }
 
     /**

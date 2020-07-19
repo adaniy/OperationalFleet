@@ -18,7 +18,9 @@ class CreatePunaTable extends Migration
             $table->string('lloji');
             $table->string('vendi');
             $table->string('fuqia_njerzore');
+            $table->string('progresi');
             $table->string('mjetet');
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
         });
     }

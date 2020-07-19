@@ -15,6 +15,7 @@ class automjeti extends Model
         'brendi',
         'viti',
         'aktiv',
+        'deletet_at',
         'kilometrat'       
     ];
 }

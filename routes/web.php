@@ -18,8 +18,10 @@ Route::get('/login','AuthController@authenticate');
 
 Route::get('/logout','SessionsController@destory');
 
-Route::get('/index', function () {
-    return view('index');
+Route::get('/home','PunaController@index');
+
+Route::get('/statistika', function () {
+    return view('statistika.index');
 });
 
 Route::get('/tables', function () {
@@ -37,9 +39,10 @@ Route::get('/njoftime','NjoftimeController@index');
 
 
 
-Route::resource('automjetet', 'AutomjetiController');
+Route::resource('/automjetet', 'AutomjetiController');
+Route::post('/automjetet/trash{automjetet}','AutomjetiController@trash')->name('automjetet.trash');
 
 
 
 
-Route::get('/karburanti', 'KarburantiController@index');
+Route::resource('/karburanti', 'KarburantiController');

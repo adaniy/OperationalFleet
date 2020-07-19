@@ -5,7 +5,7 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
       <div class="sidebar-brand-icon rotate-n-15">
       </div>
-      <div class="sidebar-brand-text mx-3">Web App</div>
+      <div class="sidebar-brand-text mx-3">Arbotec</div>
     </a>
 
     <!-- Divider -->
@@ -26,7 +26,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="karburanti">
+      <a class="nav-link" href="/karburanti">
         <i class="fas fa-fw fa-table"></i>
         <span>Karburant</span></a>
     </li>
@@ -124,12 +124,11 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" href="/index">
+      <a class="nav-link" href="/statistika">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Statistika</span></a>
     </li>
 
-    
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
