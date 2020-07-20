@@ -143,11 +143,14 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+          @csrf
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="/">Logout</a>
+          <input type="submit" class="btn btn-primary" value="Logout">
         </div>
       </div>
+    </form>
     </div>
   </div>
