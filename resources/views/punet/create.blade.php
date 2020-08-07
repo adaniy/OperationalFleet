@@ -60,11 +60,11 @@
 
     <div class="modal-dialog"> 
       <div class="modal-content">
-  <form method="POST" action="{{ route('karburanti.store') }}">
+  <form method="POST" action="{{ route('punet.store') }}">
           @csrf
          <div class="modal-header">      
-          <h4 class="modal-title">Shto Njesi Karburanti</h4>
-          <button type="button" class="close" onclick="window.location='/karburanti';">&times;</button>
+          <h4 class="modal-title">Shto Pune te re</h4>
+          <button type="button" class="close" onclick="window.location='/punet';">&times;</button>
          </div>
          <div class="modal-body">     
           <div class="form-group">
@@ -145,16 +145,16 @@
                         </tr>
                       </tfoot>
                       <tbody>
-                        @foreach ($automjetet as $a)
+                        {{-- @foreach ($automjetet as $a) --}}
                         <tr>
-                          <td><input type="checkbox" name="group1[]" onclick="getRow(this)"></td>
-                          <td hidden>{{ $a->id }}</td>
-                          <td>{{ $a->regjistrimi }}</td>
-                          <td>{{ $a->lloji }}</td>
-                          <td>{{ $a->brendi }}</td>
-                          <td>{{ $a->viti }}</td>
+                          {{-- <td><input type="checkbox" name="group1[]" onclick="getRow(this)"></td> --}}
+                          {{-- <td hidden>{{ $a->id }}</td> --}}
+                          {{-- <td>{{ $a->regjistrimi }}</td> --}}
+                          {{-- <td>{{ $a->lloji }}</td> --}}
+                          {{-- <td>{{ $a->brendi }}</td> --}}
+                          {{-- <td>{{ $a->viti }}</td> --}}
                         </tr>
-                        @endforeach
+                        {{-- @endforeach --}}
                       </tbody>
                     </table>
                   </div>
@@ -212,15 +212,15 @@
                       </tr>
                     </tfoot>
                     <tbody>
-                      @foreach ($personelet as $p)
+                      {{-- @foreach ($personelet as $p) --}}
                       <tr>
-                        <td><input type="checkbox" name="group2[]" onclick="getRow(this)"></td>
-                        <td hidden>{{ $p->id }}</td>
-                        <td>{{ $p->emri_mbiemri }}</td>
-                        <td>{{ $p->data_lindjes }}</td>
-                        <td>{{ $p->nr_telefonite }}</td>
+                        {{-- <td><input type="checkbox" name="group2[]" onclick="getRow(this)"></td> --}}
+                        {{-- <td hidden>{{ $p->id }}</td> --}}
+                        {{-- <td>{{ $p->emri_mbiemri }}</td> --}}
+                        {{-- <td>{{ $p->data_lindjes }}</td> --}}
+                        {{-- <td>{{ $p->nr_telefonite }}</td> --}}
                       </tr>
-                      @endforeach
+                      {{-- @endforeach --}}
                     </tbody>
                   </table>
                 </div>

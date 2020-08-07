@@ -4,6 +4,24 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+
+          {{-- Alerts if Action was succesful or failed --}}
+          <div class="col-sm-12">
+
+            @if(session()->get('success'))
+            <div class="alert alert-success alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ session()->get('success') }}  
+              </div>
+            @endif
+            @if(session()->get('failure'))
+            <div class="alert alert-danger alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ session()->get('failure') }}  
+              </div>
+            @endif
+          
+
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Karburanti</h1>
           <p class="mb-4">Manipulimi me te Karburant</p>

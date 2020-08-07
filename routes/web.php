@@ -45,11 +45,11 @@ Route::get('/tables', function () {
 });
 
 
-Route::get('/punet','PunaController@index')->middleware('auth');
+Route::resource('/punet','PunaController')->middleware('auth');
 
 
 
-Route::get('/njoftime','NjoftimeController@index')->middleware('auth');
+Route::resource('/njoftime','NjoftimeController')->middleware('auth');
 
 
 
