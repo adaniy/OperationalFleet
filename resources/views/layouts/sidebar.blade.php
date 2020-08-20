@@ -33,14 +33,14 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="tables">
+      <a class="nav-link" href="/servisi">
         <i class="fas fa-fw fa-table"></i>
         <span>Servisime</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="tables">
+      <a class="nav-link" href="/pjese">
         <i class="fas fa-fw fa-table"></i>
         <span>Pjese</span></a>
     </li>

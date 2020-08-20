@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\servisi;
+use App\puna;
 use Illuminate\Http\Request;
+use DB;
 
 class ServisiController extends Controller
 {
@@ -14,7 +15,9 @@ class ServisiController extends Controller
      */
     public function index()
     {
-        //
+        $servises = DB::table('servisi')->where('deleted_at', null)->get();
+        
+        return view('servisime.index',compact('servises'));
     }
 
     /**

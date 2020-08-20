@@ -53,9 +53,30 @@ Route::resource('/njoftime','NjoftimeController')->middleware('auth');
 
 
 
+Route::resource('/servisi','ServisiController')->middleware('auth');
+
+
+
+
+Route::resource('/pjese','PjeseController')->middleware('auth');
+
+
+
+
+
+Route::resource('/personeli','PersoneliController')->middleware('auth');
+
+
+
+
+
+
+
 
 Route::resource('/automjetet', 'AutomjetiController')->middleware('auth');
 Route::post('/automjetet/trash{automjetet}','AutomjetiController@trash')->name('automjetet.trash')->middleware('auth');
+
+
 
 
 

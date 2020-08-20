@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\personeli;
 use Illuminate\Http\Request;
+use DB;
 
 class PersoneliController extends Controller
 {
@@ -14,7 +15,9 @@ class PersoneliController extends Controller
      */
     public function index()
     {
-        //
+        $personelis = DB::table('personeli')->where('deleted_at', null)->get();
+        
+        return view('personeli.index',compact('personelis'));
     }
 
     /**

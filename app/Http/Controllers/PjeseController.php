@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\pjese;
 use Illuminate\Http\Request;
+use DB;
 
 class PjeseController extends Controller
 {
@@ -14,7 +15,9 @@ class PjeseController extends Controller
      */
     public function index()
     {
-        //
+        $pjeses = DB::table('pjese')->where('deleted_at', null)->get();
+        
+        return view('pjese.index',compact('pjeses'));
     }
 
     /**
