@@ -6,7 +6,7 @@ use App\automjeti;
 use Illuminate\Http\Request;
 use DB;
 
-class AutomjetiController extends Controller
+class AutomjetiAPIController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,8 +23,7 @@ class AutomjetiController extends Controller
     {
         $automjetets = DB::table('automjeti')->where('deleted_at', null)->get();
         
-        return view('automjetet.index',compact('automjetets'));
-        
+        return compact('automjetets');
     }
 
 
@@ -33,10 +32,6 @@ class AutomjetiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('automjetet.create');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -66,11 +61,11 @@ class AutomjetiController extends Controller
             'kilometrat' => $request->get('kilometrat'),
         ]);
         if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
-            return redirect('/automjetet')->with('failure', 'Automjeti ekziston');
+            return ['fail' => 'Automjeti ekziston'];
         }else{
             $contact->save();
         }
-        return redirect('/automjetet')->with('success', 'Automjeti u ruajt');
+        return ['success' => 'Automjeti u ruajt'];
     }
 
     /**
@@ -79,9 +74,10 @@ class AutomjetiController extends Controller
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function show($automjeti)
+    public function show($id)
     {
-        
+        $ans = ['automjeti' => automjeti::findOrFail($id)];
+        return $ans;
     }
 
     /**
@@ -90,11 +86,6 @@ class AutomjetiController extends Controller
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function edit($automjeti)
-    {
-        $contact = automjeti::find($automjeti);
-        return view('automjetet.edit', compact('contact'));  
-    }
 
     /**
      * Update the specified resource in storage.
@@ -103,7 +94,7 @@ class AutomjetiController extends Controller
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$automjeti)
+    public function update(Request $request,$id)
     {
         $request->validate([
             'nr_shasise'=>'required',
@@ -114,16 +105,21 @@ class AutomjetiController extends Controller
             'kilometrat'=>'required'
         ]);
 
-        $contact = automjeti::find($automjeti);
+        $contact = automjeti::find($id);
         $contact->nr_shasise =  $request->get('nr_shasise');
         $contact->regjistrimi =  $request->get('regjistrimi');
         $contact->lloji = $request->get('lloji');
         $contact->brendi = $request->get('brendi');
         $contact->viti = $request->get('viti');
         $contact->kilometrat = $request->get('kilometrat');
-        $contact->save();
 
-        return redirect('/automjetet')->with('success', 'Automjeti u editua');  
+        if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
+            return ['fail' => 'Automjeti ekziston'];
+        }else{
+            $contact->save();
+        }
+
+        return ['success'=> 'Automjeti u editua'];  
     }
 
     /**
@@ -146,7 +142,6 @@ class AutomjetiController extends Controller
         $contact->deleted_at=now();
         $contact->save();
 
-        return redirect('/automjetet')->with('success', 'Automjeti u fshi');
+        return ['success'=> 'Automjeti u fshi'];
     }
-
 }

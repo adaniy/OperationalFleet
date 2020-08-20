@@ -128,15 +128,15 @@
          </div>
         <div class="form-group">
           <label>Litra</label>
-          <input name="litra" type="text" class="form-control" required>
+          <input name="litra" type="number" class="form-control" required>
          </div>
          <div class="form-group">
           <label>Shuma</label>
-          <input name="shuma" type="text" class="form-control" required>
+          <input name="shuma" type="number" class="form-control" required>
          </div>
         <div class="form-group">
          <label>Kilometrat</label>
-         <input name="kilometrat" type="text" class="form-control" required>
+         <input name="kilometrat" type="number" class="form-control" required>
         </div>  
        </div>
        <div class="modal-footer">

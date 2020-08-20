@@ -27,6 +27,46 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
+
+$.get('http://127.0.0.1:8000/api/statistika/javore')
+.then(function(ff){
+    let a = JSON.parse(JSON.stringify(ff));
+    let ans = a.ans;
+
+    $('#shpenzime-javore').append('<p>'+'$'+ans+'</p>');
+
+})
+
+$.get('http://127.0.0.1:8000/api/statistika/mujore')
+.then(function(ff){
+    let a = JSON.parse(JSON.stringify(ff));
+    let ans = a.ans;
+
+    $('#shpenzime-mujore').append('<p>'+'$'+ans+'</p>');
+    
+})
+
+$.get('http://127.0.0.1:8000/api/statistika/punet/numri')
+.then(function(ff){
+    let a = JSON.parse(JSON.stringify(ff));
+    let ans = a.ans;
+
+    $('#numri-puneve').append('<p>'+ans+'</p>');
+    
+})
+
+$.get('http://127.0.0.1:8000/api/statistika/punet/avg')
+.then(function(ff){
+    let a = JSON.parse(JSON.stringify(ff));
+    let ans = a.ans;
+
+    $('#punet-javore').append(ans+'%');
+    
+})
+
+
+
+
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {

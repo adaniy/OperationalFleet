@@ -50,10 +50,12 @@
                       </a>
                       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                         <div class="dropdown-header">Veprime :</div>
-                      <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal2" onlick="">Shto Progres</a>
+                      <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal2" onlick="" >Shto Progres</a>
                         <a class="dropdown-item" href="#">Perfundo</a>
                       </div>
                     </div>
+
+
 
                     <div style="display: inline;">
                       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -145,25 +147,26 @@
 <div class="modal fade pg-show-modal" id="modal2" tabindex="-1" role="dialog" aria-hidden="true"> 
   <div class="modal-dialog"> 
     <div class="modal-content">
-<form method="POST" action="">
+<form method="post" action="">
         @csrf
-       <div class="modal-header">      
+      <div class="modal-header">      
         <h4 class="modal-title">Shto Progres ne Pune</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-       </div>
-       <div class="modal-body">     
+      </div>
+      <div class="modal-body">     
         <div class="form-group">
-         <label>Sa eshte perqindja e punes se perfunduar</label>
-         <input name="progresi" type="number" class="form-control" required>
+        <label>Sa eshte perqindja e punes se perfunduar</label>
+        <input name="progresi" type="number" class="form-control" required>
         </div>
-       </div>
-       <div class="modal-footer">
-       <input type="button" class="btn btn-default" data-dismiss="modal" value="Anulo" >
-        <input type="submit" class="btn btn-primary" value="Shto" >
-       </div>
+      </div>
+      <div class="modal-footer">
+      <input type="button" class="btn btn-default" data-dismiss="modal" value="Anulo" >
+        <input type="button" class="btn btn-primary" value="Shto" id="shtoProgresB">
+      </div>
       </form>
-     </div>                
+    </div>                
   </div>    
 </div> 
+
 
 @endsection

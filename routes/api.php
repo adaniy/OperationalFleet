@@ -14,6 +14,50 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:web')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+//api routes for user registration
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
+
+
+
+//api routes for automjeti page
+Route::get('/automjeti', 'AutomjetiAPIController@index')->name('automjeti.index')
+        // ->middleware('auth:web')
+        ;
+Route::get('/automjeti/{id}', 'AutomjetiAPIController@show')->name('automjeti.show')
+        // ->middleware('auth:web')
+        ;
+Route::post('/automjeti', 'AutomjetiAPIController@store')->name('automjeti.store')
+        // ->middleware('auth:web')
+        ;
+Route::post('/automjeti/{id}', 'AutomjetiAPIController@update')->name('automjeti.update')
+        // ->middleware('auth:web')
+        ;
+Route::delete('/automjeti/{id}', 'AutomjetiAPIController@trash')->name('automjeti.trash')
+        // ->middleware('auth:web')
+        ;
+
+
+
+
+//api Routes for statistika page
+Route::get('/statistika/gjitheseje', 'StatistikaController@shumaGjithesej')
+        // ->middleware('auth:web')
+        ;
+Route::get('/statistika/javore', 'StatistikaController@shpenzimeJavore')
+        // ->middleware('auth:web')
+;
+Route::get('/statistika/mujore', 'StatistikaController@shpenzimeMujore')
+        // ->middleware('auth:web')
+;
+Route::get('/statistika/punet/numri', 'StatistikaController@numriPuneve')
+        // ->middleware('auth:web')
+;
+Route::get('/statistika/punet/avg', 'StatistikaController@punetJavore')
+        // ->middleware('auth:web')
+;

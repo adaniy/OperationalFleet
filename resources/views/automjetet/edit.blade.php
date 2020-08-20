@@ -36,11 +36,11 @@
          </div>
         <div class="form-group">
          <label>Viti</label>
-         <input name="viti" id="viti" type="text" class="form-control" value="{{ $contact->viti }}" required>
+         <input name="viti" id="viti" type="number" class="form-control" value="{{ $contact->viti }}" required>
         </div>
         <div class="form-group">
          <label>Kilometrat</label>
-         <input name="kilometrat" id="kilometrat" type="text" class="form-control" value="{{ $contact->kilometrat }}" required>
+         <input name="kilometrat" id="kilometrat" type="number" class="form-control" value="{{ $contact->kilometrat }}" required>
         </div>   
        </div>
        <div class="modal-footer">

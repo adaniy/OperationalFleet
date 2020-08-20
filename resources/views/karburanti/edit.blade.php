@@ -28,15 +28,15 @@
          </div>
         <div class="form-group">
           <label>Litra</label>
-          <input name="litra" id="lloji" type="text" class="form-control" value="{{ $contact->litra }}" required>
+          <input name="litra" id="lloji" type="number" class="form-control" value="{{ $contact->litra }}" required>
          </div>
          <div class="form-group">
           <label>Shuma</label>
-          <input name="shuma" id="brendi" type="text" class="form-control" value="{{ $contact->shuma }}" required>
+          <input name="shuma" id="brendi" type="number" class="form-control" value="{{ $contact->shuma }}" required>
          </div>
         <div class="form-group">
          <label>Kilometrat</label>
-         <input name="kilometrat" id="viti" type="text" class="form-control" value="{{ $contact->kilometrat }}" required>
+         <input name="kilometrat" id="viti" type="number" class="form-control" value="{{ $contact->kilometrat }}" required>
         </div>  
        </div>
        <div class="modal-footer">

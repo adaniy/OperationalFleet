@@ -100,6 +100,20 @@ class PunaController extends Controller
         return redirect('/punet')->with('success', 'Puna u editua');
     }
 
+
+    public function updateProgres(Request $request, $puna)
+    {
+        $request->validate([
+            'progresi'=>'required'
+        ]);
+
+        $contact = puna::find($puna);
+        $contact->progresi =  $request->get('progresi');
+
+        $contact->save();
+        return redirect('/punet')->with('success', 'Puna u editua');
+    }
+
     public function shtoProgres(Request $request, $puna)
     {
         $request->validate([

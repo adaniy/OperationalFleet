@@ -59,7 +59,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Shpenzime  Javore</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$5,000</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="shpenzime-javore"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -76,7 +76,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Shpenzime  Mujore</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$25,000</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="shpenzime-mujore"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -92,10 +92,10 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Punet ditore</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Punet Javore</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id='punet-javore'></div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
@@ -118,8 +118,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Numri i puneve</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Numri i puneve te pa kryera</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id='numri-puneve'></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -181,26 +181,12 @@
                 <h6 class="m-0 font-weight-bold text-primary">Progresi i puneve</h6>
               </div>
               <div class="card-body">
-                <h4 class="small font-weight-bold">Puna e pare<span class="float-right">20%</span></h4>
+                @foreach($punas as $p)
+              <h4 class="small font-weight-bold">{{ $p->lloji }}<span class="float-right">{{ $p->progresi }}%</span></h4>
                 <div class="progress mb-4"> 
-                  <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-@if( $p->progresi<40) danger @elseif($p->progresi>40 and $p->progresi<100) primary @else() success @endif" role="progressbar" style="width: {{ $p->progresi }}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h4 class="small font-weight-bold">Puna e dyte <span class="float-right">40%</span></h4>
-                <div class="progress mb-4">
-                  <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h4 class="small font-weight-bold">Puna e trete <span class="float-right">60%</span></h4>
-                <div class="progress mb-4">
-                  <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h4 class="small font-weight-bold">Puna e katert <span class="float-right">80%</span></h4>
-                <div class="progress mb-4">
-                  <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h4 class="small font-weight-bold">Puna e peste<span class="float-right">Complete!</span></h4>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                @endforeach
               </div>
             </div>
 

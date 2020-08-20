@@ -2,6 +2,13 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+  $.get('http://127.0.0.1:8000/api/statistika/gjitheseje')
+              .then(function(ff){
+                  let a = JSON.parse(JSON.stringify(ff));
+                  let karburantiChart = a.shumaKarburant;
+                  let pjeseChart = a.shumaPjese;
+                  let serviseChart = a.shumaServise;
+
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
@@ -9,7 +16,7 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["Karburant", "Servisime", "Pjese"],
     datasets: [{
-      data: [500, 300, 150],
+      data: [karburantiChart, serviseChart, pjeseChart],
       backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
       hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -33,3 +40,5 @@ var myPieChart = new Chart(ctx, {
     cutoutPercentage: 80,
   },
 });
+
+})

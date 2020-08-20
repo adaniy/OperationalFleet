@@ -133,11 +133,11 @@
            </div>
           <div class="form-group">
            <label>Viti</label>
-           <input name="viti" type="text" class="form-control" required>
+           <input name="viti" type="number" class="form-control" required>
           </div>
           <div class="form-group">
            <label>Kilometrat</label>
-           <input name="kilometrat" type="text" class="form-control" required>
+           <input name="kilometrat" type="number" class="form-control" required>
           </div>   
          </div>
          <div class="modal-footer">

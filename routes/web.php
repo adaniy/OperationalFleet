@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/',function(){
     return view('home');
 })->middleware('auth');
 
-Route::get('/home', 'KarburantiController@index')->name('home')->middleware('auth');
+Route::get('/home', 'KarburantiController@index');
 
 
 
@@ -25,6 +26,8 @@ Route::get('/home', 'KarburantiController@index')->name('home')->middleware('aut
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
 
 // Password Reset Routes...
 // $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
@@ -36,16 +39,12 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 
 
-Route::get('/statistika', function () {
-    return view('statistika.index');
-})->middleware('auth');
+Route::get('/statistika', 'StatistikaController@index');
 
-Route::get('/tables', function () {
-    return view('asd.tables');
-});
 
 
 Route::resource('/punet','PunaController')->middleware('auth');
+Route::post('/punet/{id}','PunaController@updateProgres')->name('punet.updateprogres')->middleware('auth');
 
 
 
@@ -57,7 +56,6 @@ Route::resource('/njoftime','NjoftimeController')->middleware('auth');
 
 Route::resource('/automjetet', 'AutomjetiController')->middleware('auth');
 Route::post('/automjetet/trash{automjetet}','AutomjetiController@trash')->name('automjetet.trash')->middleware('auth');
-
 
 
 
