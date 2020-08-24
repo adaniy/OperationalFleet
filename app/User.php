@@ -5,11 +5,17 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\softDeletes;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, softDeletes;
 
+    const ADMIN_USER = 'true';
+    const REGULAR_USER = 'false';
+
+
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +23,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'admin',
     ];
 
     /**
@@ -26,7 +35,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
+        'verification_token',
     ];
 
     /**
@@ -37,7 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     public function generateToken()
     {
         $this->api_token = str_random(60);
@@ -45,4 +56,11 @@ class User extends Authenticatable
 
         return $this->api_token;
     }
+
+
+    public function isAdmin()
+    {
+        return $this->admin == User::ADMIN_USER;
+    }
+
 }

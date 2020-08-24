@@ -11,16 +11,16 @@
             @if(session()->get('success'))
             <div class="alert alert-success alert-dismissible">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session()->get('success') }}  
+                {{ session()->get('success') }}
               </div>
             @endif
             @if(session()->get('failure'))
             <div class="alert alert-danger alert-dismissible">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session()->get('failure') }}  
+                {{ session()->get('failure') }}
               </div>
             @endif
-          
+
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Karburanti</h1>
@@ -35,7 +35,7 @@
               </form>
             </h6>
 
-              
+
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -44,11 +44,9 @@
                     <tr>
                       <th>#</th>
                       <th>Automjeti</th>
-                      <th>Perosneli</th>
+                      <th>Personeli</th>
                       <th>Litra</th>
                       <th>Shuma</th>
-                      <th>Kilometrat</th>
-                      <th>Data</th>
                       <th>Veprime</th>
                     </tr>
                   </thead>
@@ -56,32 +54,28 @@
                     <tr>
                       <th>#</th>
                       <th>Automjeti</th>
-                      <th>Perosneli</th>
+                      <th>Personeli</th>
                       <th>Litra</th>
                       <th>Shuma</th>
-                      <th>Kilometrat</th>
-                      <th>Data</th>
                       <th>Veprime</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     @foreach ($karburantis as $k)
                     @php
-                      $automjetet = App\automjeti::find($k->automjeti_id);
-                      $personeli = App\personeli::find($k->personeli_id);
+//                      $automjetet = App\automjeti::find($k->automjeti_id);
+//                      $personeli = App\personeli::find($k->personeli_id);
                     @endphp
                     <tr>
                       <td>{{ $k->id }}</td>
-                    <td>{{ $automjetet->lloji}}, {{ $automjetet->brendi}}, {{ $automjetet->regjistrimi}}</td>
-                      <td>{{ $personeli->emri_mbiemri}}, {{ $personeli->nr_telefonite }}</td>
+{{--                    <td>{{ $automjetet->lloji}}, {{ $automjetet->brendi}}, {{ $automjetet->regjistrimi}}</td>--}}
+                      {{-- <td>{{ $personeli->emri_mbiemri}}, {{ $personeli->nr_telefonite }}</td> --}}
                       <td>{{ $k->litra }}</td>
                       <td>{{ $k->shuma }}</td>
-                      <td>{{ $k->kilometrat }}</td>
-                      <td>{{ $k->data }}</td>
                       <td>
                         <form style="display: inline" action="{{ route('karburanti.edit', $k->id) }}">
                         <input class="btn btn-primary" type="submit" value="Edito">
-                        </form>                                        
+                        </form>
                       </td>
                     </tr>
                     @endforeach
@@ -108,16 +102,16 @@
       <!-- End of Footer -->
 
 {{-- Shto Modal --}}
-<div class="modal fade pg-show-modal" id="modal1" tabindex="-1" role="dialog" aria-hidden="true"> 
-  <div class="modal-dialog"> 
+<div class="modal fade pg-show-modal" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
 <form method="POST" action="{{ route('karburanti.store') }}">
         @csrf
-       <div class="modal-header">      
+       <div class="modal-header">
         <h4 class="modal-title">Shto Njesi Karburanti</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
        </div>
-       <div class="modal-body">     
+       <div class="modal-body">
         <div class="form-group">
          <label>Automjeti</label>
          <input name="automjeti_id" type="text" class="form-control" required>
@@ -137,28 +131,28 @@
         <div class="form-group">
          <label>Kilometrat</label>
          <input name="kilometrat" type="number" class="form-control" required>
-        </div>  
+        </div>
        </div>
        <div class="modal-footer">
        <input type="button" class="btn btn-default" data-dismiss="modal" value="Anulo" >
         <input type="submit" class="btn btn-primary" value="Shto" >
        </div>
       </form>
-     </div>                
-  </div>    
-</div>  
+     </div>
+  </div>
+</div>
 
 
 {{-- Delete Modal --}}
-<div class="modal fade pg-show-modal" id="modal3" tabindex="-1" role="dialog" aria-hidden="true"> 
-  <div class="modal-dialog"> 
+<div class="modal fade pg-show-modal" id="modal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <form>
-       <div class="modal-header">      
+       <div class="modal-header">
         <h4 class="modal-title">Fshij Automjetin</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
        </div>
-       <div class="modal-body">     
+       <div class="modal-body">
         <p>A jeni te sigurt se doni te fshini kete Automjet?</p>
         <p class="text-warning"><small>Ky veprim nuk mund te kthehet me.</small></p>
        </div>
@@ -167,8 +161,8 @@
         <input type="submit" class="btn btn-danger" value="Fshij">
        </div>
       </form>
-     </div>             
-  </div>                         
+     </div>
+  </div>
 </div>
 
 @endsection

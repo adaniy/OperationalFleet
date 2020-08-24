@@ -18,7 +18,7 @@ class KarburantiController extends Controller
     public function index()
     {
         $karburantis = DB::table('karburanti')->get();
-        $automjetet = DB::table('automjeti');
+        $automjetet = DB::table('automjeti')->get();
         $personelet = DB::table('personeli')->get();
         return view('karburanti.index',compact('karburantis'));
     }
@@ -46,9 +46,8 @@ class KarburantiController extends Controller
         $request->validate([
             'automjeti_id'=>'required',
             'personeli_id'=>'required',
-            'litra'=>'required',
-            'shuma'=>'required',
-            'kilometrat'=>'required',
+            'litra'=>'required|numeric',
+            'shuma'=>'required|numeric',
         ]);
 
         $automjet = explode(", ",$request->get('automjeti_id'));
@@ -59,8 +58,6 @@ class KarburantiController extends Controller
             'personeli_id' => $personel[0],
             'litra' => $request->get('litra'),
             'shuma' => $request->get('shuma'),
-            'kilometrat' => $request->get('kilometrat'),
-            'data'=> now()
         ]);
         
         $contact->save();

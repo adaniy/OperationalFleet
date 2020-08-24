@@ -23,7 +23,7 @@ class CreatePersoneliTable extends Migration
             $table->string('grupi_gjakut');
             $table->boolean('aktiv');
             $table->string('pushimet')->nullable();
-            $table->date('deleted_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
         });

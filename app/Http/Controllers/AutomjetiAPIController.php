@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\automjeti;
 use Illuminate\Http\Request;
+use App\Traits\ApiResponser;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
-class AutomjetiAPIController extends Controller
+class AutomjetiAPIController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -21,9 +23,9 @@ class AutomjetiAPIController extends Controller
 
     public function index()
     {
-        $automjetets = DB::table('automjeti')->where('deleted_at', null)->get();
-        
-        return compact('automjetets');
+        $automjetets = automjeti::all();
+
+        return $this->showAll($automjetets);
     }
 
 
@@ -43,11 +45,12 @@ class AutomjetiAPIController extends Controller
     {
         $request->validate([
             'nr_shasise'=>'required',
-            'regjistrimi'=>'required',
+            'regjistrimi'=>'required|numeric',
             'lloji'=>'required',
             'brendi'=>'required',
-            'viti'=>'required',
-            'kilometrat'=>'required'
+            'viti'=>'required|numeric',
+            'kilometrat'=>'required|numeric',
+            'image'=>'required|image'
         ]);
 
         $contact = new automjeti([
@@ -57,7 +60,7 @@ class AutomjetiAPIController extends Controller
             'brendi' => $request->get('brendi'),
             'viti' => $request->get('viti'),
             'aktiv'=> true,
-            'deleted_at'=> null,
+            'image'=> $request->image->store(''),
             'kilometrat' => $request->get('kilometrat'),
         ]);
         if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
@@ -74,10 +77,10 @@ class AutomjetiAPIController extends Controller
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(automjeti $id)
     {
-        $ans = ['automjeti' => automjeti::findOrFail($id)];
-        return $ans;
+//        $ans = ['automjeti' => automjeti::findOrFail($id)];
+        return $this->showOne($id);
     }
 
     /**
@@ -113,13 +116,17 @@ class AutomjetiAPIController extends Controller
         $contact->viti = $request->get('viti');
         $contact->kilometrat = $request->get('kilometrat');
 
-        if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
-            return ['fail' => 'Automjeti ekziston'];
-        }else{
-            $contact->save();
+        if($request->hasFile('image')){
+            Storage::delete($contact->image);
+
+            $contact->image = $request->image->store('');
         }
 
-        return ['success'=> 'Automjeti u editua'];  
+
+            $contact->save();
+
+
+        return ['success'=> 'Automjeti u editua'];
     }
 
     /**
@@ -140,6 +147,8 @@ class AutomjetiAPIController extends Controller
     {
         $contact = automjeti::find($automjeti);
         $contact->deleted_at=now();
+        Storage::delete($contact->image);
+
         $contact->save();
 
         return ['success'=> 'Automjeti u fshi'];

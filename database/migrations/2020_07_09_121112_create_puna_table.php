@@ -20,7 +20,7 @@ class CreatePunaTable extends Migration
             $table->string('fuqia_njerzore');
             $table->string('progresi');
             $table->string('mjetet');
-            $table->date('deleted_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

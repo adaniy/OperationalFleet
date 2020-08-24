@@ -19,9 +19,8 @@ class CreateServisiTable extends Migration
             $table->unsignedBigInteger('personeli_id');
             $table->string('pershkrimi');
             $table->string('shuma');
-            $table->string('kilometrat');
             $table->date('servisi_ardhshem');
-            $table->date('deleted_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('automjeti_id')->references('id')->on('automjeti');

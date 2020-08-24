@@ -39,7 +39,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 
 
-Route::get('/statistika', 'StatistikaController@index');
+Route::get('/statistika', 'StatistikaController@index')->middleware('auth');
 
 
 
@@ -73,12 +73,18 @@ Route::resource('/personeli','PersoneliController')->middleware('auth');
 
 
 
-Route::resource('/automjetet', 'AutomjetiController')->middleware('auth');
-Route::post('/automjetet/trash{automjetet}','AutomjetiController@trash')->name('automjetet.trash')->middleware('auth');
+Route::resource('/automjetet', 'AutomjetiController')
+        ->middleware('auth')
+        ;
+Route::post('/automjetet/trash{automjetet}','AutomjetiController@trash')->name('automjetet.trash')
+        ->middleware('auth')
+        ;
 
 
 
 
 
-Route::resource('/karburanti', 'KarburantiController')->middleware('auth');
+Route::resource('/karburanti', 'KarburantiController')
+        // ->middleware('auth')
+        ;
 

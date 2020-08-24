@@ -3,9 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\softDeletes;
 
 class karburanti extends Model
 {
+
+    use softDeletes;
+
+    protected $dates = ['deleted_at'];
+
     public $table = "karburanti";
 
     protected $fillable = [
@@ -13,8 +19,6 @@ class karburanti extends Model
         'personeli_id',
         'litra',
         'shuma',
-        'kilometrat',
         'data',
-        'deleted_at'      
     ];
 }

@@ -48,11 +48,11 @@ class AutomjetiController extends Controller
     {
         $request->validate([
             'nr_shasise'=>'required',
-            'regjistrimi'=>'required',
+            'regjistrimi'=>'required|integer',
             'lloji'=>'required',
             'brendi'=>'required',
-            'viti'=>'required',
-            'kilometrat'=>'required'
+            'viti'=>'required|integer',
+            'kilometrat'=>'required|integer',
         ]);
 
         $contact = new automjeti([

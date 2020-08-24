@@ -17,7 +17,7 @@ class CreateNjoftimeTable extends Migration
             $table->id();
             $table->string('Lloji');
             $table->string('Pershkrimi');
-            $table->date('deleted_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

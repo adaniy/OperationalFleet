@@ -22,7 +22,8 @@ class CreateAutomjetiTable extends Migration
             $table->string('regjistrimi')->nullable();
             $table->string('kilometrat')->nullable();
             $table->boolean('aktiv');
-            $table->date('deleted_at')->nullable();
+            $table->string('image')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

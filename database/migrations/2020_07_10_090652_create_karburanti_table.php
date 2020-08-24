@@ -19,9 +19,7 @@ class CreateKarburantiTable extends Migration
             $table->unsignedBigInteger('personeli_id');
             $table->string('litra');
             $table->string('shuma');
-            $table->string('kilometrat');
-            $table->date('data');
-            $table->date('deleted_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('automjeti_id')->references('id')->on('automjeti');

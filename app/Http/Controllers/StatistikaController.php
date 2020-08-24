@@ -8,8 +8,9 @@ use App\puna;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
+use App\Http\Controllers\ApiController;
 
-class StatistikaController extends Controller
+class StatistikaController extends ApiController
 {
 
     public function index()
@@ -39,8 +40,9 @@ class StatistikaController extends Controller
         foreach($servises as $k){
             $shumaServise += $k->shuma;
         }
-
-        return compact('shumaKarburant','shumaPjese','shumaServise');
+        
+             
+        return response()->json(['shumaKarburant'=>$shumaKarburant ,'shumaPjese'=>$shumaPjese ,'shumaServise' => $shumaServise]);
 
     }
 

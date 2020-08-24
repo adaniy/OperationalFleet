@@ -44,8 +44,6 @@
                       <th>Personeli</th>
                       <th>Pershkrimi</th>
                       <th>Shuma</th>
-                      <th>Kilometrat</th>
-                      <th>Servisi i ardhshem</th>
                       <th>Veprime</th>
                     </tr>
                   </thead>
@@ -56,8 +54,6 @@
                       <th>Personeli</th>
                       <th>Pershkrimi</th>
                       <th>Shuma</th>
-                      <th>Kilometrat</th>
-                      <th>Servisi i ardhshem</th>
                       <th>Veprime</th>
                     </tr>
                   </tfoot>
@@ -69,8 +65,6 @@
                       <td>{{ $p->personeli_id }}</td>
                       <td>{{ $p->pershkrimi }}</td>
                       <td>{{ $p->shuma }}</td>
-                      <td>{{ $p->kilometrat }}</td>
-                      <td>{{ $p->kilometrat }}</td>
                       <td>
                         <form style="display: inline" action=''>
                         <input class="btn btn-primary" type="submit" value="Edito">
