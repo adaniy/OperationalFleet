@@ -20,41 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Scopes/AutomjetiScope.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiAPIController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KarburantiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KarburantiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StatistikaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatistikaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/op_fleet_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/op_fleet_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/ApiResponser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/ApiResponser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/automjeti.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/automjeti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/karburanti.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/karburanti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/personeli.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/personeli.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pjese.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/pjese.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/puna.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/puna.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/servisi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/servisi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_120851_create_automjeti_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_120851_create_automjeti_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_121030_create_njoftime_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_121030_create_njoftime_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_121049_create_personeli_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_121049_create_personeli_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_121101_create_pjese_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_121101_create_pjese_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_121112_create_puna_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_121112_create_puna_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_121121_create_servisi_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_121121_create_servisi_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_10_090652_create_karburanti_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_10_090652_create_karburanti_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/karburanti/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/karburanti/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pjese/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pjese/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/servisime/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/servisime/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +156,9 @@
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/spatie/fractalistic" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-fractal" />
+      <path value="$PROJECT_DIR$/vendor/league/fractal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gPYQ3hNm2gyyQ7zAqlemNVyqn2" />
@@ -220,7 +197,7 @@
       <updated>1598017675067</updated>
       <workItem from="1598017676618" duration="3871000" />
       <workItem from="1598253231429" duration="7360000" />
-      <workItem from="1598262177394" duration="2867000" />
+      <workItem from="1598262177394" duration="9664000" />
     </task>
     <servers />
   </component>
@@ -252,6 +229,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="453" y="290" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1598255138844" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598272959263">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1598272959263" />
     <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1598017767412">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
