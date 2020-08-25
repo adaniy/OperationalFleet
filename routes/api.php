@@ -43,6 +43,24 @@ Route::delete('/automjeti/{id}', 'AutomjetiAPIController@destroy')->name('automj
         ;
 
 
+//api routes for karburanti page
+Route::get('/karburant', 'KarburantiApiController@index')->name('karburant.index')
+    // ->middleware('auth:web')
+        ;
+Route::get('/karburant/{id}', 'KarburantiApiController@show')->name('karburant.show')
+    // ->middleware('auth:web')
+        ;
+Route::post('/karburant', 'KarburantiApiController@store')->name('karburant.store')
+    // ->middleware('auth:web')
+        ;
+Route::post('/karburant/{id}', 'KarburantiApiController@update')->name('karburant.update')
+    // ->middleware('auth:web')
+        ;
+Route::delete('/karburant/{id}', 'KarburantiApiController@destroy')->name('karburant.destroy')
+    // ->middleware('auth:web')
+        ;
+
+
 
 
 //api Routes for statistika page

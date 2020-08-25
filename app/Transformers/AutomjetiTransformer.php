@@ -43,6 +43,12 @@ class AutomjetiTransformer extends TransformerAbstract
             'creationDate' => (string)$automjeti->created_at,
             'lastChange' => (string)$automjeti->updated_at,
             'DeletedDate' => isset($automjeti->deleted_at) ? (string) $automjeti->deleted_at : null,
+
+            'links' => [
+                'rel' =>  'self',
+                'href' =>  route('automjeti.show', $automjeti->id),
+            ]
+
         ];
     }
 
