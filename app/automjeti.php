@@ -18,10 +18,10 @@ class automjeti extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected static function boot(){
-        parent::boot();
-        static::addGlobalScope(new AutomjetiScope);
-    }
+//    protected static function boot(){
+//        parent::boot();
+//        static::addGlobalScope(new AutomjetiScope);
+//    }
 
 
     public $table = "automjeti";

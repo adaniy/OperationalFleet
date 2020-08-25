@@ -38,7 +38,7 @@ Route::post('/automjeti', 'AutomjetiAPIController@store')->name('automjeti.store
 Route::post('/automjeti/{id}', 'AutomjetiAPIController@update')->name('automjeti.update')
         // ->middleware('auth:web')
         ;
-Route::delete('/automjeti/{id}', 'AutomjetiAPIController@trash')->name('automjeti.trash')
+Route::delete('/automjeti/{id}', 'AutomjetiAPIController@destroy')->name('automjeti.destroy')
         // ->middleware('auth:web')
         ;
 

@@ -42,7 +42,7 @@ class AutomjetiTransformer extends TransformerAbstract
             'image' => (String)($automjeti->image),
             'creationDate' => (string)$automjeti->created_at,
             'lastChange' => (string)$automjeti->updated_at,
-            'DeletedDatae' => isset($automjeti->deleted_at) ? (string) $automjeti->deleted_at : null,
+            'DeletedDate' => isset($automjeti->deleted_at) ? (string) $automjeti->deleted_at : null,
         ];
     }
 
@@ -58,7 +58,7 @@ class AutomjetiTransformer extends TransformerAbstract
             'image' => 'image',
             'creationDate' => 'created_at',
             'lastChange' => 'updated_at',
-            'DeletedDatae' => 'deleted_at',
+            'DeletedDate' => 'deleted_at',
         ];
         return isset($attributes[$index]) ? $attributes[$index] : null ;
     }

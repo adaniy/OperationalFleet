@@ -135,22 +135,11 @@ class AutomjetiAPIController extends ApiController
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function destroy($automjeti)
+    public function destroy(automjeti $id)
     {
-        $contact = automjeti::find($automjeti);
-        $contact->delete();
+        $id->delete();
 
-        return redirect('/automjetet')->with('success', 'Automjeti u fshi');
+        return $this->showOne($id);
     }
 
-    public function trash($automjeti)
-    {
-        $contact = automjeti::find($automjeti);
-        $contact->deleted_at=now();
-        Storage::delete($contact->image);
-
-        $contact->save();
-
-        return ['success'=> 'Automjeti u fshi'];
-    }
 }
