@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\automjeti;
+use App\Http\Middleware\TransformInput;
+use App\Transformers\AutomjetiTransformer;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponser;
 use DB;
@@ -10,6 +12,14 @@ use Illuminate\Support\Facades\Storage;
 
 class AutomjetiAPIController extends ApiController
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->middleware('transform.input:' . AutomjetiTransformer::class)->only(['store','update']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +53,7 @@ class AutomjetiAPIController extends ApiController
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $rules = [
             'nr_shasise'=>'required',
             'regjistrimi'=>'required|numeric',
             'lloji'=>'required',
@@ -51,7 +61,9 @@ class AutomjetiAPIController extends ApiController
             'viti'=>'required|numeric',
             'kilometrat'=>'required|numeric',
             'image'=>'required|image'
-        ]);
+        ];
+
+        $this->validate($request,$rules);
 
         $contact = new automjeti([
             'nr_shasise' => $request->get('nr_shasise'),
@@ -63,8 +75,9 @@ class AutomjetiAPIController extends ApiController
             'image'=> $request->image->store(''),
             'kilometrat' => $request->get('kilometrat'),
         ]);
+
         if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
-            return ['fail' => 'Automjeti ekziston'];
+            return $this->showOne($contact,201);
         }else{
             $contact->save();
         }

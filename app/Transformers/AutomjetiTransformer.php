@@ -59,12 +59,29 @@ class AutomjetiTransformer extends TransformerAbstract
             'NrShasise' =>'nr_shasise',
             'Lloji' =>'lloji',
             'Viti' =>'viti',
-            'regjistrimi' =>'regjistrimi',
-            'kilometrat' => 'kilometrat',
+            'Regjistrimi' =>'regjistrimi',
+            'Kilometrat' => 'kilometrat',
             'image' => 'image',
             'creationDate' => 'created_at',
             'lastChange' => 'updated_at',
             'DeletedDate' => 'deleted_at',
+        ];
+        return isset($attributes[$index]) ? $attributes[$index] : null ;
+    }
+
+    public static function transformedAttribute($index)
+    {
+        $attributes = [
+            'id' =>'identifier',
+            'nr_shasise' =>'NrShasise',
+            'lloji' =>'Lloji',
+            'viti' =>'Viti',
+            'regjistrimi' =>'Regjistrimi',
+            'kilometrat' => 'Kilometrat',
+            'image' => 'image',
+            'created_at' => 'creationDate',
+            'updated_at' => 'lastChange',
+            'deleted_at' => 'DeletedDate',
         ];
         return isset($attributes[$index]) ? $attributes[$index] : null ;
     }

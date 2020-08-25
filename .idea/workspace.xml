@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,13 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Transformers/KarburantiTransformer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/ApiResponser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/ApiResponser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiAPIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KarburantiApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KarburantiApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TransformInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TransformInput.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Transformers/AutomjetiTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/AutomjetiTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/karburanti.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/karburanti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transformers/KarburantiTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/KarburantiTransformer.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +199,7 @@
       <workItem from="1598017676618" duration="3871000" />
       <workItem from="1598253231429" duration="7360000" />
       <workItem from="1598262177394" duration="12530000" />
-      <workItem from="1598339732613" duration="6534000" />
+      <workItem from="1598339732613" duration="10080000" />
     </task>
     <servers />
   </component>
@@ -228,10 +231,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="453" y="290" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1598255138844" />
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598344113396">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598346605372">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1598344113396" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1598346605372" />
     <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1598017767412">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -260,9 +263,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="667" y="124" width="585" height="801" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598343957458" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1598344549095">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1598353846257">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598344549095" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598353846257" />
   </component>
 </project>

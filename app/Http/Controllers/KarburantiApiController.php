@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\TransformInput;
 use App\karburanti;
+use App\Transformers\KarburantiTransformer;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponser;
 use DB;
@@ -10,6 +12,14 @@ use Illuminate\Support\Facades\Storage;
 
 class KarburantiApiController extends ApiController
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->middleware('transform.input:' . KarburantiTransformer::class)->only(['store','update']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

@@ -59,12 +59,27 @@ class KarburantiTransformer extends TransformerAbstract
         $attributes = [
             'identifier' =>'id',
             'Automjeti' =>'automjeti_id',
-            'Personeli' =>'personeli_id',
+            '' =>'personeli_id',
             'Litra' =>'litra',
             'Shuma' =>'shuma',
             'creationDate' => 'created_at',
             'lastChange' => 'updated_at',
             'DeletedDate' => 'deleted_at',
+        ];
+        return isset($attributes[$index]) ? $attributes[$index] : null ;
+    }
+
+    public static function transformedAttribute($index)
+    {
+        $attributes = [
+            'identifier' =>'id',
+            'automjeti_id' =>'Automjeti',
+            'personeli_id' =>'Personeli',
+            'litra' =>'Litra',
+            'shuma' =>'Shuma',
+            'created_at' => 'creationDate',
+            'updated_at' => 'lastChange',
+            'deleted_at' => 'DeletedDate',
         ];
         return isset($attributes[$index]) ? $attributes[$index] : null ;
     }
