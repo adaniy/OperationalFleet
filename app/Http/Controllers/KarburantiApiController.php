@@ -19,6 +19,13 @@ class KarburantiApiController extends ApiController
         $this->middleware('client.credentials')->only(['index','store']);
 
         $this->middleware('transform.input:' . KarburantiTransformer::class)->only(['store','update']);
+
+        $this->middleware('scope:purchase-karburant')->only(['store','update']);
+
+        $this->middleware('scope:manage-karburant')->except('index','store','show','update','destroy');
+
+        $this->middleware('scope:read-general')->except('index');
+
     }
 
 

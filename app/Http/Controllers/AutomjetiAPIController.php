@@ -20,8 +20,13 @@ class AutomjetiAPIController extends ApiController
 
         $this->middleware('auth:api')->except(['index','show']);
 
-
         $this->middleware('transform.input:' . AutomjetiTransformer::class)->only(['store','update']);
+
+        $this->middleware('scope:read-general')->except('index');
+
+
+
+
     }
 
 
