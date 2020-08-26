@@ -93,7 +93,6 @@ trait ApiResponser
             $perPage = (int) request()->per_page;
         }
 
-
         $results = $collection->slice(($page-1)* $perPage, $perPage)->values();
 
         $paginated =  new LengthAwarePaginator($results,$collection->count(),$perPage,$page, [

@@ -26,8 +26,11 @@ class TransformInput
 
         $response = $next($request);
 
-        if(isset($respone->exception) && $response->exception instanceof ValidationException){
+        if(isset($response->exception) && $response->exception instanceof ValidationException){
+//        if(true){
             $data = $response->getData();
+
+//            $data = [];
 
             $transformedErrors = [];
 

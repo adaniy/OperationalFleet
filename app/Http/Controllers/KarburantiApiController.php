@@ -16,6 +16,8 @@ class KarburantiApiController extends ApiController
     {
         parent::__construct();
 
+        $this->middleware('client.credentials')->only(['index','store']);
+
         $this->middleware('transform.input:' . KarburantiTransformer::class)->only(['store','update']);
     }
 

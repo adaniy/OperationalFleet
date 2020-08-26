@@ -27,7 +27,7 @@ Route::post('/register', 'Auth\RegisterController@register');
 
 //api routes for automjeti page
 Route::get('/automjeti', 'AutomjetiAPIController@index')->name('automjeti.index')
-        // ->middleware('auth:web')
+//         ->middleware('api')
         ;
 Route::get('/automjeti/{id}', 'AutomjetiAPIController@show')->name('automjeti.show')
         // ->middleware('auth:web')
@@ -79,3 +79,8 @@ Route::get('/statistika/punet/numri', 'StatistikaController@numriPuneve')
 Route::get('/statistika/punet/avg', 'StatistikaController@punetJavore')
         // ->middleware('auth:web')
 ;
+
+
+
+//api oauth routes
+Route::post('oauth/token','\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');

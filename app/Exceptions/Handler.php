@@ -6,6 +6,7 @@ use Exception;
 use App\Traits\ApiResponser;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Session\TokenMismatchException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Throwable;
@@ -72,7 +73,7 @@ class Handler extends ExceptionHandler
         }
 
         if ($exception instanceof AuthenticationException) {
-            return $this->errorResponse('Unauthenticated',401);
+            $this->unauthenticated($request,$exception);
         }
 
         if ($exception instanceof AuthorizationException) {
@@ -95,9 +96,24 @@ class Handler extends ExceptionHandler
             return $this->errorResponse('Query Exception',500);
         }
 
-//        return $this->errorResponse('Unexpected Eception. Try later',500);
+        if($exception instanceof TokenMismatchException){
+            return redirect()->back()-withInput(request()->input());
+        }
+
+//        return $this->errorResponse('Unexpected Exception. Try later',500);
 
         return parent::render($request, $exception);
+    }
+
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if($this->isFrontend($request)){
+            return redirect()->guest('/login');
+        }
+
+        return $this->errorResponse('Unauthenticated', 401);
+
     }
 
 
@@ -106,7 +122,22 @@ class Handler extends ExceptionHandler
     {
         $errors = $e->validator->errors()->getMessages();
 
+        if($this->isFrontend($request)){
+            return $request->ajax() ? response()->json($errors,422) : redirect()
+                ->back()
+                ->withInput($request->input())
+                ->with($errors)
+                ;
+        }
+
+
         return $this->errorResponse($errors,422);
+    }
+
+
+    private function isFrontend($request)
+    {
+        return $request->acceptsHtml() && collect($request->route()->middleware())->contains('web');
     }
 
 }
