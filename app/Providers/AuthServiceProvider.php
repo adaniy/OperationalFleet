@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+
+use App\automjeti;
+use App\Policies\AutomjetiPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
@@ -15,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        automjeti::class => AutomjetiPolicy::class,
     ];
 
     /**
@@ -36,6 +39,7 @@ class AuthServiceProvider extends ServiceProvider
             'manage-karburant' => 'CRUD karburantet',
             'manage-account' =>  'Read account data, if admin or not. Modify account data but not delete',
             'read-general' => 'Read general info like automjeti karburanti etc.',
+            'dev' => 'everything',
             ]);
     }
 }

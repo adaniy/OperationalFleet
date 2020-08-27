@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\automjeti;
+use App\User;
 use App\Http\Middleware\TransformInput;
 use App\Transformers\AutomjetiTransformer;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponser;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class AutomjetiAPIController extends ApiController
@@ -15,16 +18,15 @@ class AutomjetiAPIController extends ApiController
     public function __construct()
     {
 
-
         $this->middleware('client.credentials')->only(['index','show']);
 
-        $this->middleware('auth:api')->except(['index','show']);
+        $this->middleware('auth:api');
 
         $this->middleware('transform.input:' . AutomjetiTransformer::class)->only(['store','update']);
 
-        $this->middleware('scope:read-general')->except('index');
+//        $this->middleware('scope:read-general')->except('index');
 
-
+        $this->middleware('scope:dev')->except(['index','show']);
 
 
     }
@@ -43,9 +45,11 @@ class AutomjetiAPIController extends ApiController
 
     public function index()
     {
-        $automjetets = automjeti::all();
+//        $this->authorize('viewAny',automjeti::class);
 
-        return $this->showAll($automjetets);
+            $automjetets = automjeti::all();
+
+            return $this->showAll($automjetets);
     }
 
 
@@ -63,6 +67,8 @@ class AutomjetiAPIController extends ApiController
      */
     public function store(Request $request)
     {
+        $this->authorize('create',automjeti::class);
+
         $rules = [
             'nr_shasise'=>'required',
             'regjistrimi'=>'required|numeric',
@@ -89,6 +95,9 @@ class AutomjetiAPIController extends ApiController
     public function show(automjeti $id)
     {
 //        $ans = ['automjeti' => automjeti::findOrFail($id)];
+
+//        $this->authorize('view',$id);
+
         return $this->showOne($id);
     }
 
@@ -106,8 +115,10 @@ class AutomjetiAPIController extends ApiController
      * @param  \App\automjeti  $automjeti
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request,automjeti $id)
     {
+        $this->authorize('update',$id);
+
         $request->validate([
             'nr_shasise'=>'required',
             'regjistrimi'=>'required',
@@ -146,6 +157,8 @@ class AutomjetiAPIController extends ApiController
      */
     public function destroy(automjeti $id)
     {
+        $this->authorize('delete',$id);
+
         $id->delete();
 
         return $this->showOne($id);

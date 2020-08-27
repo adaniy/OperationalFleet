@@ -10,6 +10,6 @@ class AutomjetiScope implements Scope
 {
     public function apply(\Illuminate\Database\Eloquent\Builder $builder, \Illuminate\Database\Eloquent\Model $model)
     {
-        $builder->where('deleted_at', null);
+//        $builder->where('deleted_at', null);
     }
 }
