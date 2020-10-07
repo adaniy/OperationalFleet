@@ -8,42 +8,23 @@ use DB;
 
 class AutomjetiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
 
     public function index()
     {
         $automjetets = DB::table('automjeti')->where('deleted_at', null)->get();
-        
+
         return view('automjetet.index',compact('automjetets'));
-        
+
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('automjetet.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -73,36 +54,20 @@ class AutomjetiController extends Controller
         return redirect('/automjetet')->with('success', 'Automjeti u ruajt');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\automjeti  $automjeti
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($automjeti)
     {
-        
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\automjeti  $automjeti
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($automjeti)
     {
         $contact = automjeti::find($automjeti);
-        return view('automjetet.edit', compact('contact'));  
+        return view('automjetet.edit', compact('contact'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\automjeti  $automjeti
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request,$automjeti)
     {
         $request->validate([
@@ -123,28 +88,14 @@ class AutomjetiController extends Controller
         $contact->kilometrat = $request->get('kilometrat');
         $contact->save();
 
-        return redirect('/automjetet')->with('success', 'Automjeti u editua');  
+        return redirect('/automjetet')->with('success', 'Automjeti u editua');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\automjeti  $automjeti
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($automjeti)
     {
-        $contact = automjeti::find($automjeti);
+        $contact = automjeti::findOrFail($automjeti);
         $contact->delete();
-
-        return redirect('/automjetet')->with('success', 'Automjeti u fshi');
-    }
-
-    public function trash($automjeti)
-    {
-        $contact = automjeti::find($automjeti);
-        $contact->deleted_at=now();
-        $contact->save();
 
         return redirect('/automjetet')->with('success', 'Automjeti u fshi');
     }

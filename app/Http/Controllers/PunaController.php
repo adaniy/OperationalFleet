@@ -8,34 +8,21 @@ use DB;
 
 class PunaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $punas = DB::table('puna')->where('deleted_at', null)->get();
-        
+
         return view('punet.index',compact('punas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('punet.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -53,40 +40,23 @@ class PunaController extends Controller
             'progresi'=> 0,
             'deleted_at'=> null
         ]);
-        
+
         $contact->save();
         return redirect('/punet')->with('success', 'Puna u ruajt me sukses!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\puna  $puna
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(puna $puna)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\puna  $puna
-     * @return \Illuminate\Http\Response
-     */
     public function edit(puna $puna)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\puna  $puna
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $puna)
     {
         $request->validate([
@@ -133,14 +103,12 @@ class PunaController extends Controller
         return redirect('/punet')->with('success', 'Puna u editua');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\puna  $puna
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(puna $puna)
     {
-        //
+        $contact = puna::findOrFail($puna);
+        $contact->delete();
+
+        return redirect('/punet')->with('success', 'Puna u fshi');
     }
 }

@@ -10,11 +10,7 @@ use DB;
 
 class KarburantiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $karburantis = DB::table('karburanti')->get();
@@ -23,11 +19,7 @@ class KarburantiController extends Controller
         return view('karburanti.index',compact('karburantis'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $automjetet = DB::table('automjeti')->where('deleted_at',null)->get();
@@ -35,12 +27,7 @@ class KarburantiController extends Controller
         return view('karburanti.create',compact('automjetet','personelet'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -59,41 +46,25 @@ class KarburantiController extends Controller
             'litra' => $request->get('litra'),
             'shuma' => $request->get('shuma'),
         ]);
-        
+
         $contact->save();
         return redirect('/karburanti')->with('success', 'Njesia e Karburantit u ruajt');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\karburanti  $karburanti
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(karburanti $karburanti)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\karburanti  $karburanti
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($karburanti)
     {
         $contact = karburanti::find($karburanti);
-        return view('karburanti.edit', compact('contact'));  
+        return view('karburanti.edit', compact('contact'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\karburanti  $karburanti
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request,$karburanti)
     {
         $request->validate([
@@ -112,15 +83,10 @@ class KarburantiController extends Controller
         $contact->kilometrat = $request->get('kilometrat');
         $contact->save();
 
-        return redirect('/karburanti')->with('success', 'Njesia e Karburantit u editua'); 
+        return redirect('/karburanti')->with('success', 'Njesia e Karburantit u editua');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\karburanti  $karburanti
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($karburanti)
     {
         $contact = karburanti::find($karburanti);

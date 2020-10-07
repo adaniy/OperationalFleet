@@ -18,16 +18,6 @@ class UserController extends ApiController
         $this->middleware('transform.input:' . UserTransformer::class)->only(['store','update']);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
 
     public function index()
     {
@@ -37,18 +27,7 @@ class UserController extends ApiController
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $rules = [
@@ -82,32 +61,14 @@ class UserController extends ApiController
         return ['success' => 'User u ruajt'];
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $User
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(User $id)
     {
 //        $ans = ['User' => User::findOrFail($id)];
         return $this->showOne($id);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $User
-     * @return \Illuminate\Http\Response
-     */
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $User
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request,$id)
     {
         $request->validate([
@@ -140,17 +101,12 @@ class UserController extends ApiController
         return ['success'=> 'User u editua'];
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $User
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $id)
-    {
-        $id->delete();
 
-        return $this->showOne($id);
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return $this->showOne($user);
     }
 
 }
