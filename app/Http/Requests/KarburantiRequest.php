@@ -13,7 +13,7 @@ class KarburantiRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class KarburantiRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'automjeti_id'=>'required',
+            'personeli_id'=>'required',
+            'litra'=>'required|numeric',
+            'shuma'=>'required|numeric',
         ];
     }
 }

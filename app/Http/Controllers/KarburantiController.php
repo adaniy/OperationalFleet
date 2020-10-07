@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\KarburantiRequest;
 use App\karburanti;
 //use App\Entities;
 use Illuminate\Database\Eloquent\Collection;
@@ -14,9 +15,8 @@ class KarburantiController extends Controller
 
     public function index()
     {
-        $karburantis = DB::table('karburanti')->get();
-        $automjetet = DB::table('automjeti')->get();
-        $personelet = DB::table('personeli')->get();
+        $karburantis = Karburanti::all();
+
         return view('karburanti.index',compact('karburantis'));
     }
 
@@ -29,14 +29,10 @@ class KarburantiController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(KarburantiRequest $request)
     {
-        $request->validate([
-            'automjeti_id'=>'required',
-            'personeli_id'=>'required',
-            'litra'=>'required|numeric',
-            'shuma'=>'required|numeric',
-        ]);
+
+        $request->validate();
 
         $automjet = explode(", ",$request->get('automjeti_id'));
         $personel = explode(", ",$request->get('personeli_id'));
@@ -49,6 +45,7 @@ class KarburantiController extends Controller
         ]);
 
         $contact->save();
+
         return redirect('/karburanti')->with('success', 'Njesia e Karburantit u ruajt');
     }
 
@@ -66,23 +63,11 @@ class KarburantiController extends Controller
     }
 
 
-    public function update(Request $request,$karburanti)
+    public function update(KarburantiRequest $request,$karburanti)
     {
-        $request->validate([
-            'automjeti_id'=>'required',
-            'personeli_id'=>'required',
-            'litra'=>'required',
-            'shuma'=>'required',
-            'kilometrat'=>'required',
-        ]);
-
         $contact = karburanti::find($karburanti);
-        $contact->automjeti_id =  $request->get('automjeti_id');
-        $contact->personeli_id =  $request->get('personeli_id');
-        $contact->litra = $request->get('litra');
-        $contact->shuma = $request->get('shuma');
-        $contact->kilometrat = $request->get('kilometrat');
-        $contact->save();
+
+        $contact->update($request->validated());
 
         return redirect('/karburanti')->with('success', 'Njesia e Karburantit u editua');
     }
@@ -90,7 +75,8 @@ class KarburantiController extends Controller
 
     public function destroy($karburanti)
     {
-        $contact = karburanti::find($karburanti);
+        $contact = Karburanti::findOrFail($karburanti);
+
         $contact->delete();
 
         return redirect('/karburanti')->with('success', 'Njesia e Karburantit u fshi');

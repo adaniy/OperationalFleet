@@ -27,7 +27,5 @@ class Automjeti extends Model
         'viti',
         'regjistrimi',
         'kilometrat',
-
-
     ];
 }

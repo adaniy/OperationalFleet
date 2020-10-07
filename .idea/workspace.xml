@@ -25,9 +25,9 @@
     <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Automjeti.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Automjeti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AutomjetiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AutomjetiRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AutomjetiRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KarburantiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KarburantiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/KarburantiRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/KarburantiRequest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +237,7 @@
       <workItem from="1598857736207" duration="705000" />
       <workItem from="1601378771151" duration="192000" />
       <workItem from="1602070214249" duration="1974000" />
-      <workItem from="1602072219905" duration="8448000" />
+      <workItem from="1602072219905" duration="8936000" />
     </task>
     <servers />
   </component>

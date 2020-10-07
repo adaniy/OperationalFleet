@@ -29,8 +29,6 @@ class AutomjetiController extends Controller
     {
         $contact = new Automjeti($request->validated());
 
-//        dd($contact);
-
         $contact->save();
 
         return redirect('/automjetet')->with('success', 'Automjeti u ruajt');
