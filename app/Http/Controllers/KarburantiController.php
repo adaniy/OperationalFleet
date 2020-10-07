@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\KarburantiRequest;
 use App\karburanti;
-//use App\Entities;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class KarburantiController extends Controller
@@ -59,6 +55,7 @@ class KarburantiController extends Controller
     public function edit($karburanti)
     {
         $contact = karburanti::find($karburanti);
+
         return view('karburanti.edit', compact('contact'));
     }
 
