@@ -27,14 +27,12 @@ class AutomjetiController extends Controller
 
     public function store(AutomjetiRequest $request)
     {
-        $request->validated();
-
         $contact = new Automjeti($request->validated());
-        if(Automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
-            return redirect('/automjetet')->with('failure', 'Automjeti ekziston');
-        }else{
-            $contact->save();
-        }
+
+//        dd($contact);
+
+        $contact->save();
+
         return redirect('/automjetet')->with('success', 'Automjeti u ruajt');
     }
 

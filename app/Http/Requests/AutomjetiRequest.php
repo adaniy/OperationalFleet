@@ -24,8 +24,8 @@ class AutomjetiRequest extends FormRequest
     public function rules()
     {
         return [
-            'nr_shasise'=>'required',
-            'regjistrimi'=>'required|integer',
+            'nr_shasise'=>['required','unique:automjeti'],
+            'regjistrimi'=>['required','unique:automjeti'],
             'lloji'=>'required',
             'brendi'=>'required',
             'viti'=>'required|integer',

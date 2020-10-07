@@ -18,19 +18,16 @@ class Automjeti extends Model
 
     protected $dates = ['deleted_at'];
 
-//    protected static function boot(){
-//        parent::boot();
-//        static::addGlobalScope(new AutomjetiScope);
-//    }
-
-
     public $table = "automjeti";
 
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'company',
-        'email',
-        'phone',
+        'nr_shasise',
+        'lloji',
+        'brendi',
+        'viti',
+        'regjistrimi',
+        'kilometrat',
+
+
     ];
 }

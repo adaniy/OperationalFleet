@@ -92,15 +92,15 @@ class Handler extends ExceptionHandler
             return $this->errorResponse($exception->getMessage(),$exception->getCode());
         }
 
-        if($exception instanceof QueryException){
-            return $this->errorResponse('Query Exception',500);
-        }
+//        if($exception instanceof QueryException){
+//            return $this->errorResponse('Query Exception',500);
+//        }
 
         if($exception instanceof TokenMismatchException){
             return redirect()->back()-withInput(request()->input());
         }
 
-//        return $this->errorResponse('Unexpected Exception. Try later',500);
+
 
         return parent::render($request, $exception);
     }
