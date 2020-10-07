@@ -21,20 +21,15 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 
         User::truncate();
-        automjeti::truncate();
-        
-        $userQuantity = 200;
-        $automjetetQuantity = 100;
-        $personeliQuantity = 200;
-        $karburantiQuantity = 100;
-        $servisiQuantity = 100;
-        $pjeseQuantity = 100;
+        Automjeti::truncate();
 
-        factory(User::class, $userQuantity)->create();
-        factory(automjeti::class, $automjetetQuantity)->create();
-        factory(personeli::class, $personeliQuantity)->create();
-        factory(karburanti::class, $personeliQuantity)->create();
-        factory(servisi::class, $personeliQuantity)->create();
-        factory(pjese::class, $personeliQuantity)->create();
+
+
+        factory(User::class, 3)->create();
+        factory(Automjeti::class, 20)->create();
+        factory(Personeli::class, 20)->create();
+        factory(Karburanti::class, 50)->create();
+        factory(Servisi::class, 10)->create();
+        factory(Pjese::class, 10)->create();
     }
 }

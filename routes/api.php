@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:web')->middleware('verified')->group(function() {
+//Route::middleware('auth:web')->middleware('verified')->group(function() {
 
     //api routes for automjeti page
     Route::get('/automjeti', 'AutomjetiAPIController@index')->name('automjeti.index');
@@ -46,7 +46,7 @@ Route::middleware('auth:web')->middleware('verified')->group(function() {
 //api oauth routes
     Route::post('oauth/token','\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
 
-});
+//});
 
 
 

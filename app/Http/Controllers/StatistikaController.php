@@ -71,6 +71,8 @@ class StatistikaController extends ApiController
 
         $ans = $shumaKarburant + $shumaPjese + $shumaServise;
 
+
+
         return compact('ans');
     }
 
