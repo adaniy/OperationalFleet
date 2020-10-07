@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function(){ return view('home'); });
-
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::get('/',function(){ return redirect('/login'); });
+
+
 Route::middleware('auth')->middleware('verified')->group(function() {
+
 
 
     Route::resource('/punet', 'PunaController');
@@ -45,13 +47,13 @@ Route::middleware('auth')->middleware('verified')->group(function() {
 
     Route::resource('/karburanti', 'KarburantiController');
 
-    Route::get('/statistika', 'StatistikaController@index')->middleware('auth');
-
-
 //    Route::get('/home/authorized-clients', 'HomeController@getAuthorizedClients')->name('authorized-clients');
 //    Route::get('/home/my-clients', 'HomeController@getClients')->name('personal-clients');
 //    Route::get('/home/my-tokens', 'HomeController@getTokens')->name('personal-tokens');
 //    Route::get('/home', 'HomeController@index');
 
 });
+
+Route::get('/statistika', 'StatistikaController@index')->middleware('admin.user');
+
 

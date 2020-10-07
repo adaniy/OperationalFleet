@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
         'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
         'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'admin.user' => \App\Http\Middleware\AdminUser::class,
         'signature' => \App\Http\Middleware\SignatureMiddleware::class,
         'transform.input' => \App\Http\Middleware\TransformInput::class,
     ];

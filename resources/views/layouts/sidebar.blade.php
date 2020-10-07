@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
       <div class="sidebar-brand-icon rotate-n-15">
       </div>
       <div class="sidebar-brand-text mx-3">Arbotec</div>
@@ -46,7 +46,7 @@
     </li>
 
 
-    
+
 
     {{-- <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
@@ -116,6 +116,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
     <!-- Heading -->
     <div class="sidebar-heading">
       Raporte
@@ -132,8 +133,10 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
+    @endif
 
-    <!-- Sidebar Toggler (Sidebar) -->
+
+<!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
