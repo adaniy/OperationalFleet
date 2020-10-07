@@ -6,6 +6,7 @@ use App\karburanti;
 //use App\Entities;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class KarburantiController extends Controller
