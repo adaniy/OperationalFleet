@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\karburanti;
-use App\automjeti;
+//use App\Entities;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class KarburantiController extends Controller
 {

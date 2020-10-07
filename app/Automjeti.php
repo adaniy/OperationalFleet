@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\softDeletes;
 use App\Scopes\AutomjetiScope;
 
-class automjeti extends Model
+class Automjeti extends Model
 {
 
     use softDeletes;

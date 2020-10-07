@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\automjeti;
+use App\Automjeti;
 use Illuminate\Http\Request;
 use DB;
 
@@ -16,7 +16,6 @@ class AutomjetiController extends Controller
         return view('automjetet.index',compact('automjetets'));
 
     }
-
 
 
     public function create()
