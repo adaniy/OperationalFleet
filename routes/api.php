@@ -32,8 +32,6 @@ Route::middleware('auth:web')->middleware('verified')->group(function() {
     Route::delete('/karburant/{id}', 'KarburantiApiController@destroy')->name('karburant.destroy');
 
 
-
-
 //api Routes for statistika page
     Route::get('/statistika/gjitheseje', 'StatistikaController@shumaGjithesej');
     Route::get('/statistika/javore', 'StatistikaController@shpenzimeJavore');
