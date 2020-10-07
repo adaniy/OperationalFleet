@@ -21,7 +21,6 @@ class CreatePersoneliTable extends Migration
             $table->string('nr_telefonite');
             $table->string('niveli_shkollimit');
             $table->string('grupi_gjakut');
-            $table->boolean('aktiv');
             $table->string('pushimet')->nullable();
             $table->softDeletes();
             $table->timestamps();

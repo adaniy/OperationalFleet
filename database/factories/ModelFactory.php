@@ -42,10 +42,9 @@ $factory->define(automjeti::class, function (Faker $faker) {
         'nr_shasise' => Str::random(5),
         'Lloji' => $faker->word,
         'brendi' => $faker->word,
-        'viti' => $faker->numberBetween(1950,2021), 
+        'viti' => $faker->numberBetween(1950,2021),
         'regjistrimi' => $faker->randomNumber($nbDigits = 8),
         'kilometrat' => $faker->randomNumber($nbDigits = 8),
-        'aktiv'=> $faker->numberBetween(0,1),
     ];
 });
 
@@ -57,10 +56,9 @@ $factory->define(personeli::class, function (Faker $faker) {
         'nr_personal' => $faker->randomNumber($nbDigits = 8),
         'emri_mbiemri' => $faker->name,
         'data_lindjes' => $faker->date,
-        'nr_telefonite' => $faker->randomNumber($nbDigits = 8), 
+        'nr_telefonite' => $faker->randomNumber($nbDigits = 8),
         'niveli_shkollimit' => $faker->randomElement(['Fillore', 'Mesme', 'Fakultet', 'Master']),
         'grupi_gjakut' => $faker->randomElement(['A+', 'A-', 'AB+', 'AB-', 'B+', 'B-', '0+', '0-']),
-        'aktiv'=> $faker->numberBetween(0,1),
     ];
 });
 
