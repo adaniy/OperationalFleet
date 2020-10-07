@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Automjeti;
+use App\Http\Requests\AutomjetiRequest;
 use Illuminate\Http\Request;
 use DB;
 
@@ -24,28 +25,12 @@ class AutomjetiController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(AutomjetiRequest $request)
     {
-        $request->validate([
-            'nr_shasise'=>'required',
-            'regjistrimi'=>'required|integer',
-            'lloji'=>'required',
-            'brendi'=>'required',
-            'viti'=>'required|integer',
-            'kilometrat'=>'required|integer',
-        ]);
+        $request->validated();
 
-        $contact = new automjeti([
-            'nr_shasise' => $request->get('nr_shasise'),
-            'regjistrimi' => $request->get('regjistrimi'),
-            'lloji' => $request->get('lloji'),
-            'brendi' => $request->get('brendi'),
-            'viti' => $request->get('viti'),
-            'aktiv'=> true,
-            'deleted_at'=> null,
-            'kilometrat' => $request->get('kilometrat'),
-        ]);
-        if(automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
+        $contact = new Automjeti($request->validated());
+        if(Automjeti::where('nr_shasise', $request->get('nr_shasise'))->exists() or automjeti::where('regjistrimi', $request->get('regjistrimi'))->exists()){
             return redirect('/automjetet')->with('failure', 'Automjeti ekziston');
         }else{
             $contact->save();
@@ -67,25 +52,11 @@ class AutomjetiController extends Controller
     }
 
 
-    public function update(Request $request,$automjeti)
+    public function update(AutomjetiRequest $request,$automjeti)
     {
-        $request->validate([
-            'nr_shasise'=>'required',
-            'regjistrimi'=>'required',
-            'lloji'=>'required',
-            'brendi'=>'required',
-            'viti'=>'required',
-            'kilometrat'=>'required'
-        ]);
-
         $contact = automjeti::find($automjeti);
-        $contact->nr_shasise =  $request->get('nr_shasise');
-        $contact->regjistrimi =  $request->get('regjistrimi');
-        $contact->lloji = $request->get('lloji');
-        $contact->brendi = $request->get('brendi');
-        $contact->viti = $request->get('viti');
-        $contact->kilometrat = $request->get('kilometrat');
-        $contact->save();
+
+        $contact->update($request->validated());
 
         return redirect('/automjetet')->with('success', 'Automjeti u editua');
     }
