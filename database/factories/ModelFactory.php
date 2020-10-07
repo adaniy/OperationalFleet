@@ -55,6 +55,7 @@ $factory->define(personeli::class, function (Faker $faker) {
     return [
         'nr_personal' => $faker->randomNumber($nbDigits = 8),
         'emri_mbiemri' => $faker->name,
+        'email' => $faker->email,
         'data_lindjes' => $faker->date,
         'nr_telefonite' => $faker->randomNumber($nbDigits = 8),
         'niveli_shkollimit' => $faker->randomElement(['Fillore', 'Mesme', 'Fakultet', 'Master']),

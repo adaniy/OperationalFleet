@@ -17,6 +17,7 @@ class CreatePersoneliTable extends Migration
             $table->id();
             $table->string('nr_personal');
             $table->string('emri_mbiemri');
+            $table->string('email');
             $table->date('data_lindjes');
             $table->string('nr_telefonite');
             $table->string('niveli_shkollimit');

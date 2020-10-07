@@ -15,8 +15,9 @@ class Personeli extends Model
     public $table = "personeli";
 
     protected $fillable = [
-        'nr_personal',
         'emri_mbiemri',
+        'nr_personal',
+        'email',
         'data_lindjes',
         'nr_telefonite',
         'niveli_shkollimit',

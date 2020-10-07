@@ -26,9 +26,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Personeli.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Personeli.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_120851_create_automjeti_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_120851_create_automjeti_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_121049_create_personeli_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_121049_create_personeli_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/personeli/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/personeli/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +237,7 @@
       <workItem from="1598857736207" duration="705000" />
       <workItem from="1601378771151" duration="192000" />
       <workItem from="1602070214249" duration="1974000" />
-      <workItem from="1602072219905" duration="6100000" />
+      <workItem from="1602072219905" duration="7059000" />
     </task>
     <servers />
   </component>
@@ -314,9 +313,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598530195089" />
-    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup" timestamp="1602070858074">
+    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup" timestamp="1602079244680">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602070858074" />
+    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602079244680" />
   </component>
 </project>
