@@ -13,7 +13,7 @@
 <form method="POST" action="{{ route('automjetet.update',$contact->id) }}">
       @method('PATCH') 
       @csrf
-       <div class="modal-header">      
+       <div class="modal-header">    
         <h4 class="modal-title">Edito Automjetin</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/automjetet';">&times;</button>
        </div>

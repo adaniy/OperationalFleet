@@ -13,13 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function(){
-    return view('home');
-})->middleware('auth');
-
-
-
-
+Route::get('/',function(){ return view('home'); });
 
 
 // Authentication Routes...
@@ -27,66 +21,37 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::middleware('auth')->middleware('verified')->group(function() {
 
 
-// Password Reset Routes...
-// $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-// $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-// $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-// $this->post('password/reset', 'Auth\ResetPasswordController@reset');
+    Route::resource('/punet', 'PunaController');
+    Route::post('/punet/{id}', 'PunaController@updateProgres')->name('punet.updateprogres');
 
 
+    Route::resource('/njoftime', 'NjoftimeController');
+
+    Route::resource('/servisi', 'ServisiController');
 
 
-
-Route::get('/statistika', 'StatistikaController@index')->middleware('auth');
-
+    Route::resource('/pjese', 'PjeseController');
 
 
-Route::resource('/punet','PunaController')->middleware('auth');
-Route::post('/punet/{id}','PunaController@updateProgres')->name('punet.updateprogres')->middleware('auth');
+    Route::resource('/personeli', 'PersoneliController');
 
 
-
-Route::resource('/njoftime','NjoftimeController')->middleware('auth');
-
-
+    Route::resource('/automjetet', 'AutomjetiController');
+    Route::post('/automjetet/trash{automjetet}', 'AutomjetiController@trash')->name('automjetet.trash');
 
 
-Route::resource('/servisi','ServisiController')->middleware('auth');
+    Route::resource('/karburanti', 'KarburantiController');
+
+    Route::get('/statistika', 'StatistikaController@index')->middleware('auth');
 
 
+//    Route::get('/home/authorized-clients', 'HomeController@getAuthorizedClients')->name('authorized-clients');
+//    Route::get('/home/my-clients', 'HomeController@getClients')->name('personal-clients');
+//    Route::get('/home/my-tokens', 'HomeController@getTokens')->name('personal-tokens');
+//    Route::get('/home', 'HomeController@index');
 
-
-Route::resource('/pjese','PjeseController')->middleware('auth');
-
-
-
-
-
-Route::resource('/personeli','PersoneliController')->middleware('auth');
-
-
-
-
-
-
-
-
-Route::resource('/automjetet', 'AutomjetiController')
-        ->middleware('auth')
-        ;
-Route::post('/automjetet/trash{automjetet}','AutomjetiController@trash')->name('automjetet.trash')
-        ->middleware('auth')
-        ;
-
-
-Route::resource('/karburanti', 'KarburantiController')
-        // ->middleware('auth')
-        ;
-
-Route::get('/home/authorized-clients','HomeController@getAuthorizedClients')->name('authorized-clients');
-Route::get('/home/my-clients','HomeController@getClients')->name('personal-clients');
-Route::get('/home/my-tokens','HomeController@getTokens')->name('personal-tokens');
-Route::get('/home','HomeController@index');
+});
 

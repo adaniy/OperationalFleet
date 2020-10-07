@@ -18,13 +18,12 @@ class KarburantiApiController extends ApiController
 
         $this->middleware('client.credentials')->only(['index','store']);
 
+        $this->middleware('auth:api');
+
         $this->middleware('transform.input:' . KarburantiTransformer::class)->only(['store','update']);
 
-        $this->middleware('scope:purchase-karburant')->only(['store','update']);
 
-        $this->middleware('scope:manage-karburant')->except('index','store','show','update','destroy');
-
-        $this->middleware('scope:read-general')->except('index');
+//        $this->middleware('scope:read-general')->except('index');
 
     }
 
@@ -42,11 +41,13 @@ class KarburantiApiController extends ApiController
 
     public function index()
     {
+
+        $this->authorize('viewAny',karburanti::class);
+
         $karburantet = karburanti::all();
 
         return $this->showAll($karburantet);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -98,7 +99,8 @@ class KarburantiApiController extends ApiController
      */
     public function show(karburanti $id)
     {
-//        $ans = ['automjeti' => automjeti::findOrFail($id)];
+        $this->authorize('view',$id);
+
         return $this->showOne($id);
     }
 
@@ -144,8 +146,7 @@ class KarburantiApiController extends ApiController
 
         $contact->save();
 
-
-        return ['success'=> 'Automjeti u editua'];
+        return $this->showOne($contact);
     }
 
     /**

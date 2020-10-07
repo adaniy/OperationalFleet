@@ -4,7 +4,9 @@ namespace App\Providers;
 
 
 use App\automjeti;
+use App\karburanti;
 use App\Policies\AutomjetiPolicy;
+use App\Policies\KarburantPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
@@ -19,6 +21,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         automjeti::class => AutomjetiPolicy::class,
+        karburanti::class => KarburantPolicy::class,
     ];
 
     /**
@@ -31,13 +34,12 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Passport::routes();
-        Passport::tokensExpireIn(Carbon::now()->addDays(30));
-        Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
+        Passport::tokensExpireIn(Carbon::now()->addMonths(1));
+        Passport::refreshTokensExpireIn(Carbon::now()->addMonths(6));
 
         Passport::tokensCan([
             'purchase-karburant' => 'Create a new Karburant for a specified automjet',
             'manage-karburant' => 'CRUD karburantet',
-            'manage-account' =>  'Read account data, if admin or not. Modify account data but not delete',
             'read-general' => 'Read general info like automjeti karburanti etc.',
             'dev' => 'everything',
             ]);

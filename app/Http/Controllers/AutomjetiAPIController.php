@@ -81,7 +81,7 @@ class AutomjetiAPIController extends ApiController
 
         $this->validate($request,$rules);
 
-        $newAutomjeti = automjeti::create($request-all());
+        $newAutomjeti = automjeti::create($request->all());
 
             return $this->showOne($newAutomjeti,201);
     }
@@ -142,11 +142,9 @@ class AutomjetiAPIController extends ApiController
             $contact->image = $request->image->store('');
         }
 
-
             $contact->save();
 
-
-        return ['success'=> 'Automjeti u editua'];
+        return $this->showOne($contact);
     }
 
     /**

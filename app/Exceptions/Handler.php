@@ -130,7 +130,6 @@ class Handler extends ExceptionHandler
                 ;
         }
 
-
         return $this->errorResponse($errors,422);
     }
 

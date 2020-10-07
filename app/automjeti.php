@@ -27,13 +27,10 @@ class automjeti extends Model
     public $table = "automjeti";
 
     protected $fillable = [
-        'nr_shasise',
-        'regjistrimi',
-        'lloji',
-        'brendi',
-        'viti',
-        'aktiv',
-        'kilometrat',
-        'image'
+        'first_name',
+        'last_name',
+        'company',
+        'email',
+        'phone',
     ];
 }
