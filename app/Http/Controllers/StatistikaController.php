@@ -15,8 +15,8 @@ class StatistikaController extends ApiController
 
     public function index()
     {
-        $punas = DB::table('puna')->where('deleted_at', null)->orderBy('created_at', 'desc')->take(5)->where('progresi','!=','100')->get();
-        
+        $punas = DB::table('puna')->orderBy('created_at', 'desc')->take(5)->where('progresi','!=','100')->get();
+
         return view('statistika.index',compact('punas'));
     }
 
@@ -40,8 +40,8 @@ class StatistikaController extends ApiController
         foreach($servises as $k){
             $shumaServise += $k->shuma;
         }
-        
-             
+
+
         return response()->json(['shumaKarburant'=>$shumaKarburant ,'shumaPjese'=>$shumaPjese ,'shumaServise' => $shumaServise]);
 
     }
@@ -68,7 +68,7 @@ class StatistikaController extends ApiController
         foreach($servises as $k){
             $shumaServise += $k->shuma;
         }
-        
+
         $ans = $shumaKarburant + $shumaPjese + $shumaServise;
 
         return compact('ans');
@@ -96,7 +96,7 @@ class StatistikaController extends ApiController
         foreach($servises as $k){
             $shumaServise += $k->shuma;
         }
-        
+
         $ans = $shumaKarburant + $shumaPjese + $shumaServise;
 
         return compact('ans');

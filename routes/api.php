@@ -14,73 +14,48 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:web')->middleware('verified')->group(function() {
 
-
-//api routes for user registration
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
-
-
-
-//api routes for automjeti page
-Route::get('/automjeti', 'AutomjetiAPIController@index')->name('automjeti.index')
-//         ->middleware('api')
-        ;
-Route::get('/automjeti/{id}', 'AutomjetiAPIController@show')->name('automjeti.show')
-        // ->middleware('auth:web')
-        ;
-Route::post('/automjeti', 'AutomjetiAPIController@store')->name('automjeti.store')
-        // ->middleware('auth:web')
-        ;
-Route::post('/automjeti/{id}', 'AutomjetiAPIController@update')->name('automjeti.update')
-        // ->middleware('auth:web')
-        ;
-Route::delete('/automjeti/{id}', 'AutomjetiAPIController@destroy')->name('automjeti.destroy')
-        // ->middleware('auth:web')
-        ;
+    //api routes for automjeti page
+    Route::get('/automjeti', 'AutomjetiAPIController@index')->name('automjeti.index');
+    Route::get('/automjeti/{id}', 'AutomjetiAPIController@show')->name('automjeti.show');
+    Route::post('/automjeti', 'AutomjetiAPIController@store')->name('automjeti.store');
+    Route::post('/automjeti/{id}', 'AutomjetiAPIController@update')->name('automjeti.update');
+    Route::delete('/automjeti/{id}', 'AutomjetiAPIController@destroy')->name('automjeti.destroy');
 
 
 //api routes for karburanti page
-Route::get('/karburant', 'KarburantiApiController@index')->name('karburant.index')
-    // ->middleware('auth:web')
-        ;
-Route::get('/karburant/{id}', 'KarburantiApiController@show')->name('karburant.show')
-    // ->middleware('auth:web')
-        ;
-Route::post('/karburant', 'KarburantiApiController@store')->name('karburant.store')
-    // ->middleware('auth:web')
-        ;
-Route::post('/karburant/{id}', 'KarburantiApiController@update')->name('karburant.update')
-    // ->middleware('auth:web')
-        ;
-Route::delete('/karburant/{id}', 'KarburantiApiController@destroy')->name('karburant.destroy')
-    // ->middleware('auth:web')
-        ;
+    Route::get('/karburant', 'KarburantiApiController@index')->name('karburant.index');
+    Route::get('/karburant/{id}', 'KarburantiApiController@show')->name('karburant.show');
+    Route::post('/karburant', 'KarburantiApiController@store')->name('karburant.store');
+    Route::post('/karburant/{id}', 'KarburantiApiController@update')->name('karburant.update');
+    Route::delete('/karburant/{id}', 'KarburantiApiController@destroy')->name('karburant.destroy');
 
 
 
 
 //api Routes for statistika page
-Route::get('/statistika/gjitheseje', 'StatistikaController@shumaGjithesej')
-        // ->middleware('auth:web')
-        ;
-Route::get('/statistika/javore', 'StatistikaController@shpenzimeJavore')
-        // ->middleware('auth:web')
-;
-Route::get('/statistika/mujore', 'StatistikaController@shpenzimeMujore')
-        // ->middleware('auth:web')
-;
-Route::get('/statistika/punet/numri', 'StatistikaController@numriPuneve')
-        // ->middleware('auth:web')
-;
-Route::get('/statistika/punet/avg', 'StatistikaController@punetJavore')
-        // ->middleware('auth:web')
-;
+    Route::get('/statistika/gjitheseje', 'StatistikaController@shumaGjithesej');
+    Route::get('/statistika/javore', 'StatistikaController@shpenzimeJavore');
+    Route::get('/statistika/mujore', 'StatistikaController@shpenzimeMujore');
+    Route::get('/statistika/punet/numri', 'StatistikaController@numriPuneve');
+    Route::get('/statistika/punet/avg', 'StatistikaController@punetJavore');
 
-
+    //api routes for user registration
+    Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('/register', 'Auth\RegisterController@register');
 
 //api oauth routes
-Route::post('oauth/token','\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
+    Route::post('oauth/token','\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
+
+});
+
+
+
+
+
+
+
+
+
+
