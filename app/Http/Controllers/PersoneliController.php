@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PersoneliRequest;
 use App\Personeli;
 use App\Repositories\PersoneliRepository;
-use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class PersoneliController extends Controller
 {
@@ -28,40 +27,25 @@ class PersoneliController extends Controller
     }
 
 
-    public function create()
-    {
-        //
-    }
-
-
     public function store(PersoneliRequest $request)
     {
-        $personeli = new Personeli($request->validated());
-
-        $personeli->save();
+        $this->personeliRepository->create($request);
 
         return redirect('/personeli')->with('success', 'Personeli u ruajt');
     }
 
 
-    public function show(personeli $personeli)
-    {
-        //
-    }
-
-
     public function edit($personeli)
     {
-        $personelis = Personeli::find($personeli);
+        $personelis = $this->personeliRepository->findById($personeli);
+
         return view('personeli.edit', compact('personelis'));
     }
 
 
     public function update(PersoneliRequest $request,$personeli)
     {
-        $contact = Personeli::find($personeli);
-
-        $contact->update($request->validated());
+        $this->personeliRepository->update($request,$personeli);
 
         return redirect('/personeli')->with('success', 'Personeli u editua');
     }
@@ -69,8 +53,7 @@ class PersoneliController extends Controller
 
     public function destroy($personeli)
     {
-        $contact = Personeli::findOrFail($personeli);
-        $contact->delete();
+        $this->personeliRepository->delete($personeli);
 
         return redirect('/personeli')->with('success', 'Personeli u fshi');
     }
