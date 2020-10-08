@@ -41,9 +41,9 @@ class NewPersonel extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('Hello and Welcome to Our Company.')
+                    ->action('Visit Our Site', url('/'))
+                    ->line('Thank you for being a part of this!');
     }
 
     /**

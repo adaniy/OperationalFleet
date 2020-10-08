@@ -2,7 +2,9 @@
 
 namespace App\Observers;
 
+use App\Notifications\NewPersonel;
 use App\Personeli;
+use Illuminate\Support\Facades\Notification;
 
 class PersoneliObserver
 {
@@ -14,7 +16,8 @@ class PersoneliObserver
      */
     public function created(Personeli $personeli)
     {
-        //
+        Notification::route('mail', $personeli->email)
+            ->notify(new NewPersonel());
     }
 
     /**
