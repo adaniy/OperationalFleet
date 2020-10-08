@@ -4,15 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PersoneliRequest;
 use App\Personeli;
+use App\Repositories\PersoneliRepository;
 use Illuminate\Http\Request;
 use DB;
 
 class PersoneliController extends Controller
 {
 
+    private $personeliRepository;
+
+    public function __construct(PersoneliRepository $personeliRepository)
+    {
+        $this->personeliRepository = $personeliRepository;
+    }
+
+
+
     public function index()
     {
-        $personelis = Personeli::all();
+        $personelis = $this->personeliRepository->all();
 
         return view('personeli.index',compact('personelis'));
     }
