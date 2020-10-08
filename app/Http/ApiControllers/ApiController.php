@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\ApiControllers;
 
+use App\Http\Controllers\Controller;
 use App\Http\Middleware\TransformInput;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponser;

@@ -8,7 +8,7 @@ use App\puna;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
-use App\Http\Controllers\ApiController;
+use App\Http\ApiControllers\ApiController;
 
 class StatistikaController extends ApiController
 {
