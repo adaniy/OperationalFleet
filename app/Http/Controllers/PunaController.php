@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PunaRequest;
 use App\puna;
 use Illuminate\Http\Request;
 use DB;
@@ -11,7 +12,7 @@ class PunaController extends Controller
 
     public function index()
     {
-        $punas = DB::table('puna')->where('deleted_at', null)->get();
+        $punas = Puna::all();
 
         return view('punet.index',compact('punas'));
     }
@@ -23,25 +24,13 @@ class PunaController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(PunaRequest $request)
     {
-        $request->validate([
-            'lloji'=>'required',
-            'vendi'=>'required',
-            'fuqia_njerzore'=>'required',
-            'mjetet'=>'required',
-        ]);
-
-        $contact = new puna([
-            'lloji' => $request->get('lloji'),
-            'vendi' => $request->get('vendi'),
-            'fuqia_njerzore' => $request->get('fuqia_njerzore'),
-            'mjetet' => $request->get('mjetet'),
-            'progresi'=> 0,
-            'deleted_at'=> null
-        ]);
+        $contact = new puna($request->validated());
+        $contact->progresi = 0;
 
         $contact->save();
+
         return redirect('/punet')->with('success', 'Puna u ruajt me sukses!');
     }
 
@@ -59,14 +48,10 @@ class PunaController extends Controller
 
     public function update(Request $request, $puna)
     {
-        $request->validate([
-            'progresi'=>'required'
-        ]);
+        $contact = Puna::findOrFail($puna);
 
-        $contact = puna::find($puna);
-        $contact->progresi =  $request->get('progresi');
+        $contact->update($request->validated());
 
-        $contact->save();
         return redirect('/punet')->with('success', 'Puna u editua');
     }
 
@@ -80,33 +65,16 @@ class PunaController extends Controller
         $contact = puna::find($puna);
         $contact->progresi =  $request->get('progresi');
 
-        $contact->save();
-        return redirect('/punet')->with('success', 'Puna u editua');
-    }
-
-    public function shtoProgres(Request $request, $puna)
-    {
-        $request->validate([
-            'lloji'=>'required',
-            'vendi'=>'required',
-            'fuqia_njerzore'=>'required',
-            'mjetet'=>'required',
-        ]);
-
-        $contact = puna::find($puna);
-        $contact->nr_shasise =  $request->get('lloji');
-        $contact->regjistrimi =  $request->get('vendi');
-        $contact->lloji = $request->get('fuqia_njerzore');
-        $contact->brendi = $request->get('mjetet');
-        $contact->save();
+        $contact->update();
 
         return redirect('/punet')->with('success', 'Puna u editua');
     }
 
 
-    public function destroy(puna $puna)
+    public function destroy($puna)
     {
-        $contact = puna::findOrFail($puna);
+        $contact = Puna::findOrFail($puna);
+
         $contact->delete();
 
         return redirect('/punet')->with('success', 'Puna u fshi');
