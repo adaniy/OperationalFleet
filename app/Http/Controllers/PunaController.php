@@ -46,13 +46,20 @@ class PunaController extends Controller
     }
 
 
-    public function update(Request $request, $puna)
+    public function update(PunaRequest $request, $puna)
     {
         $contact = Puna::findOrFail($puna);
 
         $contact->update($request->validated());
 
         return redirect('/punet')->with('success', 'Puna u editua');
+    }
+
+    public function shtoProgres($punaId)
+    {
+        $puna = Puna::findOrFail($punaId);
+
+        return view('punet.shtoprogres',compact('puna'));
     }
 
 
@@ -62,12 +69,13 @@ class PunaController extends Controller
             'progresi'=>'required'
         ]);
 
-        $contact = puna::find($puna);
+        $contact = Puna::findOrFail($puna);
         $contact->progresi =  $request->get('progresi');
+
 
         $contact->update();
 
-        return redirect('/punet')->with('success', 'Puna u editua');
+        return redirect('/punet')->with('success', 'Punes iu shtua progres');
     }
 
 

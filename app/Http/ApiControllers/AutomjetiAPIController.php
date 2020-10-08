@@ -3,14 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\automjeti;
-use App\User;
-use App\Http\Middleware\TransformInput;
+use App\Http\ApiControllers\ApiController;
 use App\Transformers\AutomjetiTransformer;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
-use App\Traits\ApiResponser;
-use DB;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class AutomjetiAPIController extends ApiController

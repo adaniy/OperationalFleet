@@ -23,10 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/punet/shtoprogres.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/ApiControllers/AutomjetiAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ApiControllers/AutomjetiAPIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/ApiControllers/KarburantiApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ApiControllers/KarburantiApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PunaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PunaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/punet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/punet/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/punet/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/punet/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +249,7 @@
       <workItem from="1602070214249" duration="1974000" />
       <workItem from="1602072219905" duration="9460000" />
       <workItem from="1602098459779" duration="609000" />
-      <workItem from="1602141439617" duration="10846000" />
+      <workItem from="1602141439617" duration="12589000" />
     </task>
     <servers />
   </component>
@@ -314,6 +317,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="730" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602145998238" />
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1602158806434">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602158806434" />
     <state x="461" y="170" key="SettingsEditor" timestamp="1598426502617">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -326,10 +333,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598530195089" />
-    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup" timestamp="1602157952584">
+    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup" timestamp="1602158435832">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602157952584" />
+    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602158435832" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/op_fleet_app$PersoneliRepository_php.dat" NAME="PersoneliRepository.php Coverage Results" MODIFIED="1602148970771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -27,7 +27,8 @@ Route::middleware('auth')->middleware('verified')->group(function() {
 
 
     Route::resource('/punet', 'PunaController');
-    Route::post('/punet/{id}', 'PunaController@updateProgres')->name('punet.updateprogres');
+    Route::get('/punet/shtoprogres/{id}','PunaController@shtoProgres')->name('puna.shtoprogres');
+    Route::put('/punet/shtoprogres/{id}', 'PunaController@updateProgres')->name('punet.updateprogres');
 
 
     Route::resource('/njoftime', 'NjoftimeController');
@@ -46,11 +47,6 @@ Route::middleware('auth')->middleware('verified')->group(function() {
 
 
     Route::resource('/karburanti', 'KarburantiController');
-
-//    Route::get('/home/authorized-clients', 'HomeController@getAuthorizedClients')->name('authorized-clients');
-//    Route::get('/home/my-clients', 'HomeController@getClients')->name('personal-clients');
-//    Route::get('/home/my-tokens', 'HomeController@getTokens')->name('personal-tokens');
-//    Route::get('/home', 'HomeController@index');
 
 });
 

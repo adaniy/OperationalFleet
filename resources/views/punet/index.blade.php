@@ -50,7 +50,7 @@
                       </a>
                       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                         <div class="dropdown-header">Veprime :</div>
-                      <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal2" onlick="" >Shto Progres</a>
+                      <a href="#" class="dropdown-item" onclick="window.location='/punet/shtoprogres/{{ $p->id }}'" >Shto Progres</a>
                         <a class="dropdown-item" href="#">Perfundo</a>
                       </div>
                     </div>
