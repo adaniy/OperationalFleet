@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\KarburantiRequest;
 use App\karburanti;
+use App\Personeli;
 use Illuminate\Support\Facades\DB;
 
 class KarburantiController extends Controller
@@ -20,7 +21,7 @@ class KarburantiController extends Controller
     public function create()
     {
         $automjetet = DB::table('automjeti')->where('deleted_at',null)->get();
-        $personelet = DB::table('personeli')->where('aktiv',1)->get();
+        $personelet = Personeli::all();
         return view('karburanti.create',compact('automjetet','personelet'));
     }
 

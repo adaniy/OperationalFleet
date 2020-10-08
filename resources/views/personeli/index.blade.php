@@ -1,4 +1,4 @@
-@extends('automjetet.layout')
+@extends('personeli.layout')
 
 
 @section('content')
@@ -25,13 +25,13 @@
           </div>
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Serviset</h1>
-          <p class="mb-4">Manipulimi me te gjitha Serviset</p>
+          <h1 class="h3 mb-2 text-gray-800">Personeli</h1>
+          <p class="mb-4">Manipulimi me te gjitha Personelet</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tabela e Serviseve<input style="float:right;" type="button" value="Shto" class="btn btn-primary" data-toggle="modal" data-target="#modal1"></h6>
+            <h6 class="m-0 font-weight-bold text-primary">Tabela e Personelit<input style="float:right;" type="button" value="Shto" class="btn btn-primary" data-toggle="modal" data-target="#modal1"></h6>
 
             </div>
             <div class="card-body">
@@ -75,7 +75,7 @@
                         <td>{{ $p->nr_telefonite }}</td>
                         <td>{{ $p->grupi_gjakut }}</td>
                       <td>
-                        <form style="display: inline" action=''>
+                        <form style="display: inline" action="{{ route('personeli.edit', $p->id) }}">
                         <input class="btn btn-primary" type="submit" value="Edito">
                         </form>
                       </td>
@@ -140,10 +140,10 @@
           </div>
              <div class="form-group">
                  <label>Niveli i shkollimit</label>
-                 <input name="niveli_shkollimit" type="number" class="form-control" required>
+                 <input name="niveli_shkollimit" type="text" class="form-control" required>
              </div><div class="form-group">
                  <label>Grupi i gjakut</label>
-                 <input name="grupi_gjakut" type="number" class="form-control" required>
+                 <input name="grupi_gjakut" type="text" class="form-control" required>
              </div>
          </div>
          <div class="modal-footer">

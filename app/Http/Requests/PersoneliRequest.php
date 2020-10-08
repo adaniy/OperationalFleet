@@ -24,8 +24,8 @@ class PersoneliRequest extends FormRequest
     public function rules()
     {
         return [
-            'nr_personal'=>['required'],
             'emri_mbiemri'=>['required'],
+            'nr_personal'=>['required'],
             'email'=>['required','email'],
             'data_lindjes'=>['required','date'],
             'nr_telefonite'=>['required','integer'],

@@ -30,7 +30,7 @@ class PersoneliController extends Controller
 
         $personeli->save();
 
-        return view('personeli.index')->with('success', 'Personeli u ruajt');
+        return redirect('/personeli')->with('success', 'Personeli u ruajt');
     }
 
 
@@ -40,20 +40,28 @@ class PersoneliController extends Controller
     }
 
 
-    public function edit(personeli $personeli)
+    public function edit($personeli)
     {
-        //
+        $personelis = Personeli::find($personeli);
+        return view('personeli.edit', compact('personelis'));
     }
 
 
-    public function update(Request $request, personeli $personeli)
+    public function update(PersoneliRequest $request,$personeli)
     {
-        //
+        $contact = Personeli::find($personeli);
+
+        $contact->update($request->validated());
+
+        return redirect('/personeli')->with('success', 'Personeli u editua');
     }
 
 
-    public function destroy(personeli $personeli)
+    public function destroy($personeli)
     {
-        //
+        $contact = Personeli::findOrFail($personeli);
+        $contact->delete();
+
+        return redirect('/personeli')->with('success', 'Personeli u fshi');
     }
 }
