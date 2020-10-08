@@ -24,22 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/404.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/blank.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/buttons.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/cards.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/charts.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/forgot-password.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/tables.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/utilities-animation.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/utilities-border.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/utilities-color.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asd/utilities-other.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/authorized-clients.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/personal-clients.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/personal-tokens.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +244,7 @@
       <workItem from="1602070214249" duration="1974000" />
       <workItem from="1602072219905" duration="9460000" />
       <workItem from="1602098459779" duration="609000" />
-      <workItem from="1602141439617" duration="8071000" />
+      <workItem from="1602141439617" duration="9559000" />
     </task>
     <servers />
   </component>
