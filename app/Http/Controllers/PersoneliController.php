@@ -3,16 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PersoneliRequest;
-use App\Personeli;
-use App\Repositories\PersoneliRepository;
-use Illuminate\Support\Facades\DB;
+use App\Repositories\PersoneliRepositoryInterface;
 
 class PersoneliController extends Controller
 {
 
     private $personeliRepository;
 
-    public function __construct(PersoneliRepository $personeliRepository)
+    public function __construct(PersoneliRepositoryInterface $personeliRepository)
     {
         $this->personeliRepository = $personeliRepository;
     }

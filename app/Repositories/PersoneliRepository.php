@@ -7,7 +7,7 @@ namespace App\Repositories;
 use App\Http\Requests\PersoneliRequest;
 use App\Personeli;
 
-class PersoneliRepository
+class PersoneliRepository implements PersoneliRepositoryInterface
 {
 
     public function getModel()
