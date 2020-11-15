@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         factory(User::class, 3)->create();
         factory(Automjeti::class, 20)->create();
         factory(Personeli::class, 20)->create();
-        factory(Karburanti::class, 50)->create();
+        factory(Karburanti::class, 10)->create();
         factory(Servisi::class, 10)->create();
         factory(Pjese::class, 10)->create();
     }

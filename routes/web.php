@@ -24,8 +24,6 @@ Route::get('/',function(){ return redirect('/login'); });
 
 Route::middleware('auth')->middleware('verified')->group(function() {
 
-
-
     Route::resource('/punet', 'PunaController');
     Route::get('/punet/shtoprogres/{id}','PunaController@shtoProgres')->name('puna.shtoprogres');
     Route::put('/punet/shtoprogres/{id}', 'PunaController@updateProgres')->name('punet.updateprogres');

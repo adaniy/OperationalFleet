@@ -6,7 +6,7 @@ use App\automjeti;
 use App\karburanti;
 use App\puna;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Http\ApiControllers\ApiController;
 
@@ -22,6 +22,31 @@ class StatistikaController extends ApiController
 
 
     public function shumaGjithesej()
+    {
+        $karburantets = DB::table('karburanti')->where('deleted_at', null)->get();
+        $shumaKarburant=0;
+        foreach($karburantets as $k){
+            $shumaKarburant += $k->shuma;
+        }
+
+        $pjeses = DB::table('pjese')->where('deleted_at', null)->get();
+        $shumaPjese=0;
+        foreach($pjeses as $k){
+            $shumaPjese += $k->shuma;
+        }
+
+        $servises = DB::table('servisi')->where('deleted_at', null)->get();
+        $shumaServise=0;
+        foreach($servises as $k){
+            $shumaServise += $k->shuma;
+        }
+
+
+        return response()->json(['shumaKarburant'=>$shumaKarburant ,'shumaPjese'=>$shumaPjese ,'shumaServise' => $shumaServise]);
+
+    }
+
+    public function shumaGjitheseje()
     {
         $karburantets = DB::table('karburanti')->where('deleted_at', null)->get();
         $shumaKarburant=0;

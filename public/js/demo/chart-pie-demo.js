@@ -5,6 +5,7 @@ Chart.defaults.global.defaultFontColor = '#858796';
   $.get('http://127.0.0.1:8000/api/statistika/gjitheseje')
               .then(function(ff){
                   let a = JSON.parse(JSON.stringify(ff));
+                  console.log(a);
                   let karburantiChart = a.shumaKarburant;
                   let pjeseChart = a.shumaPjese;
                   let serviseChart = a.shumaServise;

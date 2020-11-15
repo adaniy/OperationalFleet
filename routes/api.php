@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //api Routes for statistika page
+//    Route::get('/statistika/gjitheseje', 'StatistikaController@shumaGjithesej');
     Route::get('/statistika/gjitheseje', 'StatistikaController@shumaGjithesej');
     Route::get('/statistika/javore', 'StatistikaController@shpenzimeJavore');
     Route::get('/statistika/mujore', 'StatistikaController@shpenzimeMujore');

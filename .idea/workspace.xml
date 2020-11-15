@@ -22,7 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="" />
+    <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StatistikaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatistikaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/demo/chart-pie-demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/demo/chart-pie-demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -243,7 +250,7 @@
       <workItem from="1602098459779" duration="609000" />
       <workItem from="1602141439617" duration="15023000" />
       <workItem from="1602229566944" duration="772000" />
-      <workItem from="1605456414137" duration="2748000" />
+      <workItem from="1605456414137" duration="4022000" />
     </task>
     <servers />
   </component>
@@ -291,22 +298,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1602230343664" />
-    <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1602148970705">
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1605469460079">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602148970705" />
-    <state width="1877" height="266" key="GridCell.Tab.0.center" timestamp="1602148970705">
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605469460079" />
+    <state width="1877" height="266" key="GridCell.Tab.0.center" timestamp="1605469460078">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="266" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602148970705" />
-    <state width="1877" height="266" key="GridCell.Tab.0.left" timestamp="1602148970705">
+    <state width="1877" height="266" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605469460078" />
+    <state width="1877" height="266" key="GridCell.Tab.0.left" timestamp="1605469460078">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="266" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602148970705" />
-    <state width="1877" height="266" key="GridCell.Tab.0.right" timestamp="1602148970705">
+    <state width="1877" height="266" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605469460078" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right" timestamp="1605469460079">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="266" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602148970705" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605469460079" />
     <state x="730" y="248" key="NewPhpClassDialog" timestamp="1602145998238">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -327,10 +334,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1605457144530" />
-    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup" timestamp="1602158435832">
+    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup" timestamp="1605470081661">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602158435832" />
+    <state x="633" y="285" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1605470081661" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/op_fleet_app$PersoneliRepository_php.dat" NAME="PersoneliRepository.php Coverage Results" MODIFIED="1602148970771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
