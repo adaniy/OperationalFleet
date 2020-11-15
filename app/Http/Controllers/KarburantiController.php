@@ -29,6 +29,7 @@ class KarburantiController extends Controller
     public function store(KarburantiRequest $request)
     {
 
+        //test
         $request->validated();
 
         $automjet = explode(", ",$request->get('automjeti_id'));
