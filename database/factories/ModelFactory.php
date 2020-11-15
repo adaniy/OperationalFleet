@@ -68,8 +68,8 @@ $factory->define(karburanti::class, function (Faker $faker) {
     static $password;
 
     return [
-        'automjeti_id' => $faker->numberBetween(0,100),
-        'personeli_id' => $faker->numberBetween(0,200),
+        'automjeti_id' => Automjeti::pluck('id')->random(),
+        'personeli_id' => Personeli::pluck('id')->random(),
         'litra' => $faker->numberBetween(5,90),
         'shuma' => $faker->numberBetween(5,100),
         // 'created_at' => $faker->dateTimeBetween($startDate = '-5 years', $endDate = 'now'),
@@ -81,8 +81,8 @@ $factory->define(servisi::class, function (Faker $faker) {
     static $password;
 
     return [
-        'automjeti_id' => $faker->numberBetween(0,100),
-        'personeli_id' => $faker->numberBetween(0,200),
+        'automjeti_id' => Automjeti::pluck('id')->random(),
+        'personeli_id' => Personeli::pluck('id')->random(),
         'pershkrimi' => $faker->word,
         'shuma' => $faker->numberBetween(50,200),
         'servisi_ardhshem' => $faker->dateTimeBetween($startDate = 'now', $endDate = '1 year'),
@@ -95,8 +95,8 @@ $factory->define(pjese::class, function (Faker $faker) {
     static $password;
 
     return [
-        'automjeti_id' => $faker->numberBetween(0,100),
-        'personeli_id' => $faker->numberBetween(0,200),
+        'automjeti_id' => Automjeti::pluck('id')->random(),
+        'personeli_id' => Personeli::pluck('id')->random(),
         'lloji' => $faker->word,
         'pershkrimi' => $faker->word,
         'shuma' => $faker->numberBetween(50,200),
