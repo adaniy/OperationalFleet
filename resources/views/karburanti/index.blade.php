@@ -64,9 +64,8 @@
                     @foreach ($karburantis as $k)
                     <tr>
                       <td>{{ $k->id }}</td>
-                        <td>{{ \App\Automjeti::find($k->automjeti_id) }}</td>
-{{--                    <td>{{ \App\Automjeti::find($k['automjeti_id'])->lloji }}, {{ $automjetet->brendi}}, {{ $automjetet->regjistrimi}}</td>--}}
-{{--                       <td>{{ $personeli = App\Personeli::find($k->personeli_id) }}{{ $personeli->emri_mbiemri}}, {{ $personeli->nr_telefonite }}</td>--}}
+                    <td>{{ App\Automjeti::find($k->automjeti_id)->lloji . ', ' . App\Automjeti::find($k->automjeti_id)->brendi . ', ' .App\Automjeti::find($k->automjeti_id)->regjistrimi}}</td>
+                       <td>{{ App\Personeli::find($k->personeli_id)->emri_mbiemri}}, {{ App\Personeli::find($k->personeli_id)->nr_telefonite }}</td>
                       <td>{{ $k->litra }}</td>
                       <td>{{ $k->shuma }}</td>
                       <td>
