@@ -29,7 +29,7 @@ class KarburantiController extends Controller
     public function store(KarburantiRequest $request)
     {
 
-        $request->validate();
+        $request->validated();
 
         $automjet = explode(", ",$request->get('automjeti_id'));
         $personel = explode(", ",$request->get('personeli_id'));
