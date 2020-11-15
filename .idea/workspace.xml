@@ -23,13 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a35686f-76b9-4ec6-a2e8-392216c3d97d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/punet/shtoprogres.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/ApiControllers/AutomjetiAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ApiControllers/AutomjetiAPIController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/ApiControllers/KarburantiApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/ApiControllers/KarburantiApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PunaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PunaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/punet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/punet/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_09_121112_create_puna_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_121112_create_puna_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/karburanti/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/karburanti/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +245,9 @@
       <workItem from="1602070214249" duration="1974000" />
       <workItem from="1602072219905" duration="9460000" />
       <workItem from="1602098459779" duration="609000" />
-      <workItem from="1602141439617" duration="12589000" />
+      <workItem from="1602141439617" duration="15023000" />
+      <workItem from="1602229566944" duration="772000" />
+      <workItem from="1605456414137" duration="862000" />
     </task>
     <servers />
   </component>
@@ -293,10 +291,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="283" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#/0.0.1920.1050@0.0.1920.1050" timestamp="1602148998264" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1598858203249">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1602230343664">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1598858203249" />
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1602230343664" />
     <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1602148970705">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -329,10 +327,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="667" y="124" width="585" height="801" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598343957458" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1598530195089">
+    <state x="616" y="243" key="run.anything.popup" timestamp="1605457144530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598530195089" />
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1605457144530" />
     <state x="633" y="285" width="672" height="678" key="search.everywhere.popup" timestamp="1602158435832">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
